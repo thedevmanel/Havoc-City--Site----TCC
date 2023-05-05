@@ -1,0 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Roboto&family=Roboto+Mono:wght@600&display=swap");
+
+.caixa-imagem-fundo {
+  width: 100%;
+  opacity: 30%;
+  background-image: url("/Imagens/fundo-homepage-1.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding-block: 20%;
+}
+
+.imagem-fundo-homepage {
+  width: 100%;
+  padding: 1px;
+}
+
+.logo-index{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+}

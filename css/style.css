@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+body {
+  background: #333;
+}
+
+.logo-jogo-header {
+  position: absolute;
+  top: 1%;
+  left: 1%;
+  text-transform: uppercase;
+  color: #fef;
+}
+
+.content-homepage {
+  width: 100;
+}
+
+#menu-h {
+  position: absolute;
+  top: 0%;
+  background-color: transparent;
+  width: 100%;
+  display: flex;
+  justify-content: right;
+}
+
+#menu-h ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#menu-h ul li a {
+  width: 100px;
+  height: 35px;
+  display: grid;
+  place-items: center;
+  transition: 0.2s;
+  color: #fef;
+  text-decoration: none;
+}
+
+#menu-h ul li a:hover {
+  background-color: #f21;
+  text-shadow: 0 0 5px #fef, 0 0 10px #fef, 0 0 20px #fef, 0 0 40px #fef;
+}
+
+#menu-h ul li:last-child a {
+  background-color: #f21;
+  justify-self: flex-end;
+}
+
+.botoes-navbar {
+  display: flex;
+  padding-left: 20%;
+}
+
+h1 {
+  width: 100vw;
+  height: 10vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+p {
+  font-size: 25px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+img {
+  align-items: center;
+  display: flex;
+  height: auto;
+  flex-direction: row;
+  margin-top: 40px;
+}
+.text {
+  font-size: 15px;
+  text-align: center;
+}
+.text2 {
+  font-size: 15px;
+  text-align: center;
+}
+.text3 {
+  font-size: 10px;
+  text-align: center;
+  color: white;
+}
+
+td,
+th {
+  padding: 0.5em;
+  margin: 0;
+  /*border: 1px solid #ccc;*/
+  text-align: center;
+}
+
+td {
+  font-weight: bold;
+  /*background-color: #EEE;*/
+}
+table {
+  width: 100%;
+  margin-bottom: 0.5em;
+  table-layout: fixed;
+  text-align: center;
+}
