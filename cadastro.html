@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PÁGINA DE CADASTRO</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- <div class="header">
+      <img src="https://fontmeme.com/permalink/230502/283025c3c491389e0139aba7b4566eb5.png" alt="EXTREME COMBAT" class="imagem-logo-header" />
+    </div> -->
+    <nav id="menu-h">
+      <ul>
+        <li><a href="index.html">Home </a></li>
+
+        <li><a href="sobre.html">Sobre</a></li>
+
+        <li><a href="Download.html">Download</a></li>
+
+        <li><a href="tutorial.html">Tutorial</a></li>
+
+        <!-- <div class="botoes-navbar"> -->
+            <li><a href="entrar.html">Entrar</a></li>
+
+            <li><a href="cadastro.html">Cadastro</a></li>
+        <!-- </div> -->
+      </ul>
+    </nav>
+    <div class="container-login">
+      <div class="formulario-box">
+        <h2 class="titulo-formulario">cadastro</h2>
+        <form action="">
+          <div class="user-box">
+            <div class="user-box">
+              <input
+                type="text"
+                name="nome"
+                id="nome"
+                required
+                autocomplete="off"
+              />
+              <label for="nome"> Nome </label>
+            </div>
+            <div class="user-box">
+              <input
+                type="text"
+                name="email"
+                id="email"
+                required
+                autocomplete="off"
+              />
+              <label for="email"> Email </label>
+            </div>
+            <div class="user-box">
+              <input
+                type="password"
+                name="senha"
+                id="senha"
+                required
+                autocomplete="off"
+              />
+              <label for="senha"> Senha </label>
+              <span>
+                <input
+                  type="checkbox"
+                  name="mostrar-senha"
+                  id="mostrar-senha"
+                  class="caixa-mostrar-senha"
+                />
+              </span>
+            </div>
+            <button type="submit">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              cadastrar
+            </button>
+            <br />
+            <br />
+            <p class="texto-link-para-cadastro">
+              Se já possui uma conta
+              <a href="entrar.html" class="link-cadastro"> Se cadastre aqui </a>
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

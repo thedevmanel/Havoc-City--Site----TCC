@@ -1,0 +1,369 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Roboto;
+}
+
+body {
+  background: #333;
+}
+
+.header {
+  background: #111;
+  width: 100%;
+  padding-block: 1%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imagem-logo-header {
+  width: 30%;
+  margin-top: 0;
+} 
+
+.content-homepage {
+  width: 100;
+}
+
+#menu-h {
+  background-color: #222;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#menu-h ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#menu-h ul li a {
+  width: 120px;
+  height: 59px;
+  display: grid;
+  place-items: center;
+  transition: 0.2s;
+  color: #fff;
+  text-decoration: none;
+}
+
+#menu-h ul li a:hover {
+  background-color: #f21;
+  text-shadow: 0 0 5px  #fef, 0 0 10px #fef, 0 0 20px #fef, 0 0 40px #fef;
+}
+
+#menu-h ul li:last-child a {
+  background-color: #f21;
+  justify-self: flex-end;
+}
+
+.botoes-navbar {
+  display: flex;
+  padding-left: 20%;
+}
+
+h1 {
+  width: 100vw;
+  height: 10vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+p {
+  font-size: 25px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+img {
+  align-items: center;
+  display: flex;
+  height: auto;
+  flex-direction: row;
+  margin-top: 40px;
+}
+.text {
+  font-size: 15px;
+  text-align: center;
+}
+.text2 {
+  font-size: 15px;
+  text-align: center;
+}
+.text3{
+  font-size: 10px;
+  text-align: center;
+  color: white;
+
+}
+/* FORMULARIO CADASTRO E LOGIN */
+.container-login {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-block: 50px;
+}
+
+.content-login {
+  width: 50%;
+  padding-block: 30px;
+  background: #151515;
+  border-radius: 10px;
+}
+
+.formulario-box {
+  width: 32%;
+  padding: 40px;
+  background: #020202;
+  box-sizing: border-box;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px #111;
+}
+
+.formulario-box .user-box {
+  position: relative;
+}
+
+.formulario-box .user-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fef;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fef;
+  outline: none;
+  background: transparent;
+}
+
+.formulario-box .user-box label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fef;
+  pointer-events: none;
+  transition: 0.2s ease;
+}
+
+.titulo-formulario {
+  margin: 0 0 30px;
+  padding: 0;
+  color: #fef;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.formulario-box .user-box input:focus + label,
+.formulario-box .user-box input:valid + label {
+  top: -20px;
+  left: 0;
+  color: #f21;
+}
+
+.formulario-box .user-box input:focus {
+  border-bottom: 1px solid #f21;
+  /* box-shadow:0 0 0 transparent, 0 0 0 transparent, 0 2px 15px #f21, 0 0 0 transparent; */
+  
+}
+
+.formulario-box form button {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  padding-block: 16px;
+  color: #f21;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: 0.2s ease;
+  margin-top: 10px;
+  letter-spacing: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.formulario-box button:hover {
+  background: #f21;
+  color: #fef;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #f21, 0 0 25px #f21, 0 0 50px #f21, 0 0 100px #f21;
+}
+
+.formulario-box button span {
+  position: absolute;
+  display: block;
+}
+
+.formulario-box button span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #f21);
+  animation: btn-animl 2s linear infinite;
+}
+
+@keyframes btn-animl {
+  0% {
+    left: -100%;
+  }
+  50%,
+  100% {
+    left: 100%;
+  }
+}
+
+.formulario-box button span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #f21);
+  animation: btn-anim2 2s linear infinite;
+  animation-delay: 0.5s;
+}
+
+@keyframes btn-anim2 {
+  0% {
+    top: -100%;
+  }
+  50%,
+  100% {
+    top: 100%;
+  }
+}
+
+.formulario-box button span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #f21);
+  animation: btn-anim3 2s linear infinite;
+  animation-delay: 1.05s;
+}
+
+@keyframes btn-anim3 {
+  0% {
+    right: -100%;
+  }
+  50%,
+  100% {
+    right: 100%;
+  }
+}
+
+.formulario-box button span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #f21);
+  animation: btn-anim4 2s linear infinite;
+  animation-delay: 1.55s;
+}
+
+@keyframes btn-anim4 {
+  0% {
+    bottom: -100%;
+  }
+  50%,
+  100% {
+    bottom: 100%;
+  }
+}
+
+#mostrar-senha {
+  all: unset;
+  position: absolute;
+  border: 1px solid #fef;
+  width: 12px;
+  height: 12px;
+  display: inline-block;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: 0.2s ease;
+  top: 20%;
+  right: 0;
+}
+
+#mostrar-senha:checked {
+  all: unset;
+  position: absolute;
+  background-color: #f21;
+  border: 1px solid #f21;
+  width: 12px;
+  height: 12px;
+  display: inline-block;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  top: 20%;
+  right: 0;  
+}
+
+#mostrar-senha:hover {
+  background: #f21;
+  color: #fef;
+  border-radius: 2px;
+  box-shadow: 0 0 5px  #f21, 0 0 10px #f21, 0 0 20px #f21, 0 0 40px #f21;
+  border: 1px solid #f21;
+}
+
+.texto-link-para-cadastro {
+  color: #fef;
+  font-size: 12px;
+}
+
+.link-cadastro {
+  color: #f21;
+  text-decoration: none;
+  margin-left: 5px;
+  transition: 0.2s ease;
+}
+
+.link-cadastro:visited {
+  color: #f21;
+  text-decoration: none;
+  margin-left: 5px;
+  transition: 0.2s ease;
+}
+
+.link-cadastro:hover {
+  text-shadow: 0 0 5px  #f21, 0 0 10px #f21, 0 0 20px #f21, 0 0 40px #f21;
+  
+}
+
+
+
+td, th {
+  padding: .5em;
+  margin: 0;
+  /*border: 1px solid #ccc;*/
+  text-align: center;
+} 
+
+td{
+  font-weight:bold;
+  /*background-color: #EEE;*/
+}
+table{
+  width: 100%;
+  margin-bottom : .5em;
+  table-layout: fixed;
+  text-align: center;
+}
