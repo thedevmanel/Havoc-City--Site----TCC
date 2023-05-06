@@ -13,7 +13,7 @@ body {
 
 .logo-jogo-header {
   position: absolute;
-  top: 1%;
+  top: 20%;
   left: 1%;
   text-transform: uppercase;
   color: #fef;
@@ -64,7 +64,7 @@ body {
   padding-left: 20%;
 }
 
-h1 {
+/* h1 {
   width: 100vw;
   height: 10vw;
   display: flex;
@@ -87,7 +87,7 @@ img {
   height: auto;
   flex-direction: row;
   margin-top: 40px;
-}
+} */
 .text {
   font-size: 15px;
   text-align: center;
@@ -102,21 +102,19 @@ img {
   color: white;
 }
 
-td,
+/* td,
 th {
   padding: 0.5em;
   margin: 0;
-  /*border: 1px solid #ccc;*/
   text-align: center;
 }
 
 td {
   font-weight: bold;
-  /*background-color: #EEE;*/
 }
 table {
   width: 100%;
   margin-bottom: 0.5em;
   table-layout: fixed;
   text-align: center;
-}
+} */

@@ -14,10 +14,26 @@
   width: 100%;
   padding: 1px;
 }
+.caixa-imagem-conteudo {
+  color: #fef;
+  opacity: 100%;
+  width: 100%;
+  text-align: center;
+}
 
-.logo-index{
+.conteudo-imagem {
+  position: absolute;
+  top: 15%;
+  width: 60%;
+  left: 20%;
+  text-transform: uppercase;
+
+}
+
+.logo-homepage{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 50%;
+    margin-top: 30px;
 }
