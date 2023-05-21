@@ -4,11 +4,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Noto Sans', sans-serif;
+  font-family: sans-serif;
 }
 
 body {
-  background: #333;
+  background: #111;
+  color: #fef;
 }
 
 .logo-jogo-header {
@@ -17,10 +18,16 @@ body {
   left: 1%;
   text-transform: uppercase;
   color: #fef;
+  font-size: 20px;
+  width: 20%;
 }
 
 .content-homepage {
   width: 100;
+}
+
+.logo-header {
+  width: 100%;
 }
 
 #menu-h {
@@ -30,8 +37,9 @@ body {
   width: 100%;
   display: flex;
   justify-content: right;
+  text-transform: uppercase;
+  font-size: 13px;
 }
-
 #menu-h ul {
   list-style: none;
   display: flex;
@@ -118,3 +126,23 @@ table {
   table-layout: fixed;
   text-align: center;
 } */
+
+.footer {
+  width: 100%;
+  padding-block: 5%;
+  background: #111;
+  display: flex;
+  justify-content: space-around;
+  color: #fef;
+}
+
+.icones-footer {
+  width: 15%;
+  transition: all 0.2s ease;
+}
+
+.icones-footer:hover {
+  box-shadow: 0 0 2px #fef, 0 0 50px #fef, 0 0 10px #fef, 0 0 20px #fef;
+  background: #fef;
+  border-radius: 30px;
+}

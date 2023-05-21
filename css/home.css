@@ -2,18 +2,23 @@
 
 .caixa-imagem-fundo {
   width: 100%;
-  opacity: 30%;
-  background-image: url("/Imagens/fundo-homepage-1.png");
+  opacity: 40%;
+  background-image: url("https://i.pinimg.com/originals/46/0c/bd/460cbd085e34e1610880f1b34ec8e79e.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  padding-block: 20%;
+  padding-block: 30%;
 }
 
 .imagem-fundo-homepage {
   width: 100%;
   padding: 1px;
 }
+
+.logo-homepage {
+  width: 80%;
+}
+
 .caixa-imagem-conteudo {
   color: #fef;
   opacity: 100%;
@@ -23,17 +28,60 @@
 
 .conteudo-imagem {
   position: absolute;
-  top: 15%;
+  top: 30%;
   width: 60%;
   left: 20%;
   text-transform: uppercase;
-
 }
 
-.logo-homepage{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50%;
-    margin-top: 30px;
+.titulo-conteudo-homepage {
+  text-transform: uppercase;
+}
+
+.box-conteudo-1 {
+  margin-top: 20px;
+  width: auto;
+  padding-block: 30px;
+  text-align: center;
+}
+
+.caixa-texto-1 {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+}
+
+.conteudo-imagem-texto-1 {
+  width: 30%;
+  padding-block: 20px 100px;
+}
+
+.conteudo-texto-1 {
+  width: 40%;
+  padding-block: 20px 100px;
+  text-align: justify;
+  line-height: 1.5em;
+}
+
+.imagem-conteudo-1 {
+  width: 100%;
+  object-fit: cover;
+}
+
+.link-homepage {
+  text-decoration: none;
+  color: #f21;
+  transition: all 0.2s ease;
+}
+
+.link-homepage:visited {
+  text-decoration: none;
+  color: #f21;
+  transition: all 0.2s ease;
+}
+
+.link-homepage:hover {
+  color: #f21;
+  text-shadow: 0 0 5px  #f21, 0 0 10px #f21, 0 0 20px #f21, 0 0 40px #f21;;
 }

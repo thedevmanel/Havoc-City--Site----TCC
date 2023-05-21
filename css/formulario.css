@@ -3,6 +3,8 @@
     display: flex;
     justify-content: center;
     padding-block: 50px;
+    align-items: center;
+    padding-block: 10%;
   }
   
   .content-login {
@@ -13,7 +15,7 @@
   }
   
   .formulario-box {
-    width: 32%;
+    width: 30%;
     padding: 40px;
     background: #020202;
     box-sizing: border-box;
