@@ -36,6 +36,7 @@
 
 .titulo-conteudo-homepage {
   text-transform: uppercase;
+  font-size: 35px;
 }
 
 .box-conteudo-1 {
@@ -62,6 +63,7 @@
   padding-block: 20px 100px;
   text-align: justify;
   line-height: 1.5em;
+  font-size: 20px;
 }
 
 .imagem-conteudo-1 {
