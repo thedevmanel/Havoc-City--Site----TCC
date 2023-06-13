@@ -3,7 +3,7 @@
 .caixa-imagem-fundo {
   width: 100%;
   opacity: 40%;
-  background-image: url("https://i.pinimg.com/originals/46/0c/bd/460cbd085e34e1610880f1b34ec8e79e.png");
+  background-image: url("https://i.pinimg.com/originals/1d/16/e8/1d16e804622b36fdf5c6f6cbb69ff62d.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -24,6 +24,7 @@
   opacity: 100%;
   width: 100%;
   text-align: center;
+  
 }
 
 .conteudo-imagem {
@@ -32,10 +33,13 @@
   width: 60%;
   left: 20%;
   text-transform: uppercase;
+  
 }
 
 .titulo-conteudo-homepage {
+  padding-block: 8% 5%;
   text-transform: uppercase;
+  font-size: 35px;
 }
 
 .box-conteudo-1 {
@@ -43,6 +47,8 @@
   width: auto;
   padding-block: 30px;
   text-align: center;
+  text-shadow: 0 0 5px  #f21, 0 0 10px #f21, 0 0 15px #f21, 0 0 20px #f21;;
+
 }
 
 .caixa-texto-1 {
@@ -54,7 +60,8 @@
 
 .conteudo-imagem-texto-1 {
   width: 30%;
-  padding-block: 20px 100px;
+  box-shadow: 0 0 5px  #f21, 0 0 10px #fef  , 0 0 20px #f21, 0 0 40px #f21;;
+  display: flex;
 }
 
 .conteudo-texto-1 {
@@ -62,6 +69,7 @@
   padding-block: 20px 100px;
   text-align: justify;
   line-height: 1.5em;
+  font-size: 20px;
 }
 
 .imagem-conteudo-1 {
