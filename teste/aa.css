@@ -1,0 +1,13 @@
+/* Estilos para esconder o botão "Minha Conta" inicialmente */
+.hidden {
+    display: none;
+}
+
+/* Estilos para a barra de navegação */
+.navbar {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}

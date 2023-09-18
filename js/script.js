@@ -24,7 +24,7 @@ function verifyEmail() {
 function handleSubmit(e) {
     e.preventDefault()
     verifyEmail() 
-    window.location.replace("https://gutodev.vercel.app")
+    window.location.replace("http://localhost//Site%20do%20TCC/php/selecionar_usuario.php?email=",email,"")
 }
 
 document.addEventListener("submit", handleSubmit)
