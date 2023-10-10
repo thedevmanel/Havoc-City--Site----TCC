@@ -8,5 +8,13 @@
 .box-information-user {
   width: 60%;
   background: #222;
-  padding-block: 30px;
+  padding-block: 5%;
+}
+
+.image-information-user {
+  width: 100%;
+}
+
+.main-image-userpage {
+  width: 30%
 }
