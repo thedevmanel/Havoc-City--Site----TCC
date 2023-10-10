@@ -9,6 +9,8 @@
   width: 60%;
   background: #222;
   padding-block: 5%;
+  display: flex;
+
 }
 
 .image-information-user {
@@ -17,4 +19,11 @@
 
 .main-image-userpage {
   width: 30%
+}
+
+.info-description-user {
+  width: 30%;
+  padding-block: 10%;
+  display: flex;
+  justify-content: center;
 }

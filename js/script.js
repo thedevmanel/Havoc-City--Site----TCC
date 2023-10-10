@@ -17,6 +17,7 @@ function verifyEmail() {
         return true
     } else {
         alert("Email inválido")
+        window.location.replace("http://localhost//Havoc-City--Site----TCC/login.html",email,"")
         return false
     }
 }
@@ -24,7 +25,7 @@ function verifyEmail() {
 function handleSubmit(e) {
     e.preventDefault()
     verifyEmail() 
-    window.location.replace("http://localhost//Site%20do%20TCC/php/selecionar_usuario.php?email=",email,"")
+    window.location.replace("http://localhost//Havoc-City--Site----TCC/php/selecionar_usuario.php?email=",email,"")
 }
 
 document.addEventListener("submit", handleSubmit)
