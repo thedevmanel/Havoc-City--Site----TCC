@@ -18,7 +18,7 @@
 <body>
     <nav id="menu-h">
         <div class="logo-jogo-header">
-            <img src="https://fontmeme.com/permalink/230529/06735112d397a33f5f981ecb17a4ad41.png" class="logo-header" />
+            <img src="https://fontmeme.com/permalink/231027/599d6f4224ce722a5f04605e3e9d1db4.png" class="logo-header" />
         </div>
 
         <ul>
@@ -26,50 +26,117 @@
 
             <li><a href="Download.html">Download</a></li>
 
-            <li><a href="<?php echo $url ?>">perfil</a></li>
+            <li><a href="<?php echo $url;?>">perfil</a></li>
         </ul>
     </nav>
     <div class="container-user">
-        <!-- <div class="box-information-user">
-             <div class="image-information-user">
-                <img src="https://static.vecteezy.com/system/resources/previews/005/337/799/original/icon-image-not-found-free-vector.jpg" alt=""
-                    class="main-image-userpage" />
-            </div> -->
-            <div class="info-description-user">
-                <?php echo $nome; ?> <br />
-                <?php echo $nickname; ?> <br />
-                <?php echo $email; ?> <br />
+        <div class="container-descriptions">
+            <span class="title-user-info"> Seja bem vindo </span> <br />
+                <div class="line-title"></div>
+            <div class="box-description-user">
+                <div class="box-save-button">
+                    <div class="info-save-button">
+                        Caso quiser, você pode adicionar seus dados salvos em nossos banco de dados. Para isso, clique no
+                        botão abaixo e navegue até: <br /> <span class="file-path">\AppData\Local\Havoc City </span>no explorador de arquivos.
+                    </div>
+                    <div class="button-save">
 
-                <br />
-                <br />
-                
-            </div><!--
-                
-                </div> -->
+                        <input type="file" id="fileInput" accept=".sav" />
+                        <div id="numericValues"></div>
+                        
+                        <!-- Campos de entrada existentes -->
+                        <form action="saveData.php" method="get">
+                            <input type="text" name="seconds" id="seconds" name="seconds" readonly hidden />
+                            <input type="text" name="minutes" id="minutes" name="minutes" readonly hidden />
+                            <input type="text" name="hours" id="hours" name="hours" readonly hidden />
+                            <input type="text" name="pontuation" id="pontuation" name="pontuation" readonly hidden />
+                            
+                            <!-- Botão de confirmação e submit -->
+                            <div id="confirmationDiv">
+                                <p>Voce tem certeza de que quer enviar os dados?</p>
+                                <input type="submit" value="Confirmar Envio" class="button-submit-save" />
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="info-description-user">
+                    <span class="font-information-title"> Nome: </span> <?php echo $nome; ?> <br />
+                    <span class="font-information-title"> Nickname: </span> <?php echo $nickname; ?> <br />
+                    <span class="font-information-title"> E-mail: </span> <?php echo $email; ?> <br />
+
+                </div>
+            </div>
+            <div class="buttons-user-page">
                 <form action="edit.php" method="GET">
-                    <input type="text" name="id" id="id" hidden value="<?php echo $id;?>" />
+                    <input type="text" name="id" id="id" hidden value="<?php echo $id; ?>" />
 
-                    <input type="submit" value="Editar"/> 
+                    <input type="submit" value="Editar" class="button-choose-user" />
                 </form>
+
+                <div class="box-button-delete">
+                    <button class="button-choose-user" id="button-delete" onclick="showMessage()"> delete </button>
+
+                    <div id="box-info-delete">
+                        Deseja deletar o usuário?
+                        <form action="php/delete_user.php" method="GET">
+                            <input type="text" name="id" id="id" hidden value="<?php echo $id; ?>" />
+                            
+                            <input type="submit" id="delete" value="Sim" class="button-delete-accept" />
+                        </form>
+                        <button id="cancel" class="button-delete-accept" onclick="hideMessage()"> Não </button>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
     </div>
     <div class="footer">
         <div class="info-footer">
-            © Todos os direitos estão reservados aos desenvolvedores
-        </div>
-        <div class="icons-footer">
-            <span class="box-icones-footer">
-                <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"><img
-                        src="Imagens/insta.svg" class="icones-footer" alt="Imagem SVG" /></a>
-                <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"><img
-                        src="Imagens/facebook.svg" class="icones-footer" alt="Imagem SVG" /></a>
-                <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer"><img
-                        src="Imagens/twitter.svg" class="icones-footer" alt="Imagem SVG" /></a>
-            </span>
+            ™ & ©2023 Havoc City. Todos os direitos reservados. Havoc City, Emanuel Rabello, Gustavo Azevedo, <br>Pedro
+            Ogata, Filipe Grande sao os desenvolvedores
         </div>
     </div>
 
+    <script src="js/aparecerDelete.js"></script>
     <script>
+    /* Aperecer opção de  baixar arquivo de save*/
+        document.addEventListener("DOMContentLoaded", function () {
+        const fileInput = document.getElementById("fileInput");
+        const confirmationDiv = document.getElementById("confirmationDiv");
 
+        fileInput.addEventListener("change", function (event) {
+          const selectedFile = event.target.files[0];
+
+          if (selectedFile) {
+            const reader = new FileReader();
+
+            reader.onload = function (e) {
+              const fileText = e.target.result;
+
+              const regex =
+                /(?:seconds|minutes|hours|pontuation)="(\d+\.\d+)"/g;
+              let match;
+
+              while ((match = regex.exec(fileText)) !== null) {
+                const fieldName = match[0].split("=")[0];
+                const value = match[1];
+
+                // Preencha os campos de entrada existentes com os valores extraídos
+                const inputField = document.getElementById(fieldName);
+                if (inputField) {
+                  inputField.value = value;
+                }
+              }
+
+              // Mostrar o botão de confirmação após a leitura do arquivo
+              confirmationDiv.style.display = "block";
+            };
+
+            reader.readAsText(selectedFile);
+          }
+        });
+      });
     </script>
 </body>
 

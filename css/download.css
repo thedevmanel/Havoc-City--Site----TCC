@@ -1,13 +1,21 @@
-.img-conteiner-download {
-  width: 100%;
-  justify-content: center;
-  display: flex;
-  position: absolute;
-  padding: 30%;
-  background-image: url("https://images3.alphacoders.com/116/1168397.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  opacity: 30%;
-  
+
+.button-download {
+  width: 50%;
+  opacity: 100%;
+  color: #fef;
+  background: #000;
+  margin: 15% 25%;
+  border: none;
+  border-radius: 5px;
+  padding-block: 30px;
+  transition: 0.2s ease;
+  cursor: pointer;
+  font-size: 30px;
+  font-family: arcadeclassic;
+}
+
+.button-download:hover {
+  color: #fef;
+  background-color: #f21;
+  box-shadow: 0 0 5px #f21, 0 0 25px #f21, 0 0 50px #f21, 0 0 100px #f21;
 }

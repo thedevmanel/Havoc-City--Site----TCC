@@ -1,7 +1,169 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Roboto&family=Roboto+Mono:wght@600&display=swap");
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: roboto;
+}
+
+body {
+  background: #fef;
+  color: #000;
+}
+
+.logo-jogo-header {
+  position: absolute;
+  top: 20%;
+  left: 1%;
+  text-transform: uppercase;
+  color: #fef;
+  font-size: 20px;
+  width: 20%;
+}
+
+.content-homepage {
+  width: 100;
+}
+
+.logo-header {
+  width: 60%;
+}
+
+#menu-h {
+  position: fixed;
+  top: 0%;
+  background: transparent;
+  width: 100%;
+  display: flex;
+  justify-content: right;
+  text-transform: uppercase;
+  font-size: 13px;
+}
+#menu-h ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+#menu-h ul li a {
+  width: 120px;
+  height: 35px;
+  display: grid;
+  place-items: center;
+  transition: 0.2s;
+  color: #fef;
+  text-decoration: none;
+  font-family: arcadeclassic;
+  font-size: 15px;
+}
+
+#menu-h ul li a:hover {
+  background-color: #f21;
+  text-shadow: 0 0 5px #fef, 0 0 10px #fef, 0 0 20px #fef, 0 0 40px #fef;
+}
+
+#menu-h ul li:last-child a {
+  background-color: #f21;
+  justify-self: flex-end;
+}
+
+.botoes-navbar {
+  display: flex;
+  padding-left: 20%;
+}
+
+/* h1 {
+  width: 100vw;
+  height: 10vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+p {
+  font-size: 25px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+img {
+  align-items: center;
+  display: flex;
+  height: auto;
+  flex-direction: row;
+  margin-top: 40px;
+} */
+.text {
+  font-size: 15px;
+  text-align: center;
+}
+.text2 {
+  font-size: 15px;
+  text-align: center;
+}
+.text3 {
+  font-size: 10px;
+  text-align: center;
+  color: white;
+}
+
+/* td,
+th {
+  padding: 0.5em;
+  margin: 0;
+  text-align: center;
+}
+
+td {
+  font-weight: bold;
+}
+table {
+  width: 100%;
+  margin-bottom: 0.5em;
+  table-layout: fixed;
+  text-align: center;
+} */
+
+.footer {
+  width: 100%;
+  padding-block: 5%;
+  background: #fef;
+  display: flex;
+  justify-content: space-around;
+  color: #111;
+}
+
+.info-footer {
+  text-align: center;
+  font-size: 15px;
+  font-family: arcadeclassic;
+}
+
+.icones-footer {
+  width: 15%;
+  transition: all 0.2s ease;
+}
+
+.icones-footer:hover {
+  box-shadow: 0 0 2px #fef, 0 0 50px #fef, 0 0 10px #fef, 0 0 20px #fef;
+  background: #fef;
+  border-radius: 30px;
+}
+
 .caixa-imagem-fundo {
   width: 100%;
-  opacity: 40%;
-  background-image: url("https://i.pinimg.com/originals/1d/16/e8/1d16e804622b36fdf5c6f6cbb69ff62d.png");
+  opacity: 100%;
+  background-image: url("https://cdn.wallpapersafari.com/30/80/5NK6PB.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -36,29 +198,34 @@
 .titulo-conteudo-homepage {
   padding-block: 8% 5%;
   text-transform: uppercase;
-  font-size: 35px;
+  font-size: 45px;
   padding-block: 40px 15px;
+  font-family: arcadeclassic;
 }
 
 .box-conteudo-1 {
-  margin-top: 20px;
-  width: auto;
-  padding-block: 30px;
+  margin: 20px 0 0 10%;
+  width: 80%;
+  padding-block: 30px 20px;
   text-align: center;
   text-shadow: 0 0 5px  #f21, 0 0 10px #f21, 0 0 15px #f21, 0 0 20px #f21;;
-
+  border-bottom: 2px solid #f21;
 }
 
 .caixa-texto-1 {
-  width: 100%;
+  margin-left: 10%;
+  width: 80%;
   text-align: center;
   display: flex;
   justify-content: space-around;
+  border-top: none;
+  margin-top: 20px;
 }
 
 .conteudo-imagem-texto-1 {
   width: 30%;
   padding-block: 20px 100px;
+  
 }
 
 .conteudo-texto-1 {
@@ -72,6 +239,7 @@
 .imagem-conteudo-1 {
   width: 100%;
   object-fit: cover;
+  border-radius: 5px;
 }
 
 .link-homepage {

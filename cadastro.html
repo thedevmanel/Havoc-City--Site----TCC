@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PÁGINA DE CADASTRO</title>
+  <title>Realizar Cadastro</title>
   <link rel="stylesheet" href="css/style.css" type="text/css" />
   <link rel="stylesheet" href="css/formulario.css" type="text/css" />
 </head>
@@ -12,18 +12,19 @@
 <body>
   <nav id="menu-h">
     <div class="logo-jogo-header">
-      <img src="https://fontmeme.com/permalink/230529/06735112d397a33f5f981ecb17a4ad41.png" class="logo-header" />
+      <img src="https://fontmeme.com/permalink/231030/8bed3f01dae90fa6adbb3602541bd9f2.png" class="logo-header" />
     </div>
 
     <ul>
       <li><a href="index.html">Home </a></li>
-      
+
       <li><a href="Download.html">Download</a></li>
 
-      <li><a href="entrar.html">iniciar sessão</a></li>
+      <li><a href="entrar.html">iniciar sessao</a></li>
     </ul>
   </nav>
-  <div class="container-login">
+  <div class="container-form">
+    <div class="box-image-form"></div>
     <div class="formulario-box">
       <h2 class="titulo-formulario">cadastro</h2>
       <form action="php/inserir_usuario.php" method="get">
@@ -44,9 +45,14 @@
             <input type="password" name="senha" id="senha" required autocomplete="off" />
             <label for="senha"> Senha </label>
             <span>
-              <input type="checkbox" name="mostrar-senha" id="mostrar-senha" class="caixa-mostrar-senha" />
+              <input type="checkbox" name="mostrar-senha" onclick="showPassword()" id="mostrar-senha"
+                class="caixa-mostrar-senha" />
             </span>
           </div>
+          <p class="texto-link-para-cadastro">
+            Se possui uma conta
+            <a href="entrar.html" class="link-cadastro"> efetuar login </a>
+          </p>
           <button type="submit">
             <span></span>
             <span></span>
@@ -56,14 +62,27 @@
           </button>
           <br />
           <br />
-          <p class="texto-link-para-cadastro">
-            Se já possui uma conta
-            <a href="entrar.html" class="link-cadastro"> Se cadastre aqui </a>
-          </p>
         </div>
       </form>
     </div>
   </div>
+  <div class="footer">
+    <div class="info-footer">
+      ™ & ©2023 Havoc City. Todos os direitos reservados. Havoc City, Emanuel Rabello, Gustavo Azevedo, <br>Pedro Ogata,
+      Filipe Grande sao os desenvolvedores
+    </div>
+    <!-- <div class="icons-footer">
+        <span class="box-icones-footer">
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"><img
+                    src="Imagens/insta.svg" class="icones-footer" alt="Imagem SVG" /></a>
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"><img
+                    src="Imagens/facebook.svg" class="icones-footer" alt="Imagem SVG" /></a>
+            <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer"><img
+                    src="Imagens/twitter.svg" class="icones-footer" alt="Imagem SVG" /></a>
+        </span>
+    </div> -->
+  </div>
+  <script src="js/mostrarSenha.js"></script>
 </body>
 
 </html>

@@ -25,7 +25,7 @@ include "php/verificacao_id.php";
 
     <ul>
       <li><a href="index.html">Home </a></li>
-      
+
       <li><a href="Download.html">Download</a></li>
 
       <li><a href="entrar.html">iniciar sessão</a></li>
@@ -35,22 +35,22 @@ include "php/verificacao_id.php";
     <div class="formulario-box">
       <h2 class="titulo-formulario">Edição</h2>
       <form action="php/update_date_user.php" method="get">
-        <input type="text" name="id" id="id" hidden value="<?php echo $id;?>">
+        <input type="text" name="id" id="id" hidden value="<?php echo $id; ?>">
         <div class="user-box">
           <div class="user-box">
-            <input type="text" name="nome" id="nome" required autocomplete="off" value="<?php echo $nome;?>" />
+            <input type="text" name="nome" id="nome" required autocomplete="off" value="<?php echo $nome; ?>" />
             <label for="nome"> Nome </label>
           </div>
           <div class="user-box">
-            <input type="text" name="nickname" id="nickname" required autocomplete="off" value="<?php echo $nickname;?>" />
+            <input type="text" name="nickname" id="nickname" required autocomplete="off" value="<?php echo $nickname; ?>" />
             <label for="nickname"> Nickname </label>
           </div>
           <div class="user-box">
-            <input type="text" name="email" id="email" required autocomplete="off" value="<?php echo $email;?>" />
+            <input type="text" name="email" id="email" required autocomplete="off" value="<?php echo $email; ?>" />
             <label for="email"> Email </label>
           </div>
           <div class="user-box">
-            <input type="password" name="senha" id="senha" required autocomplete="off" value="<?php echo $senha;?>" />
+            <input type="password" name="senha" id="senha" required autocomplete="off" value="<?php echo $senha; ?>" />
             <label for="senha"> Senha </label>
             <span>
               <input type="checkbox" name="mostrar-senha" id="mostrar-senha" class="caixa-mostrar-senha" />
@@ -66,8 +66,13 @@ include "php/verificacao_id.php";
           <br />
           <br />
           <p class="texto-link-para-cadastro">
-            
-          <a href="entrar.html" class="link-cadastro"> Cancelar Edição </a>
+
+
+          <form action="usuario.php">
+            <input type="text" name="id" id="id" value="<?php echo $id; ?>" hidden />
+            <input type="submit" class="button-edicao" value="Cancelar Edição" />
+          </form>
+
           </p>
         </div>
       </form>

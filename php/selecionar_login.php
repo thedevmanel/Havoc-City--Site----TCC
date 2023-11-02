@@ -31,7 +31,8 @@ if ($gatilho ==  false) {
     mysqli_close($conn);
 
     echo "<script language='javascript' type='text/javascript'>
-    alert('O login ou senha digitados está incorreto');window.location.href='http://localhost//Havoc-City--Site----TCC/entrar.html';
+        alert('O login ou senha digitados está incorreto');
+        window.location.href='http://localhost//Havoc-City--Site----TCC/entrar.html';
     </script>";
 
 } else {

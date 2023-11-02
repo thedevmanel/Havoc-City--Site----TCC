@@ -1,16 +1,33 @@
-.container-user {
+  .container-user {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.box-information-user {
-  width: 60%;
-  background: #222;
-  padding-block: 5%;
-  display: flex;
+.container-descriptions {
+  margin-top: 5%;
+  width: 70%;
+  padding-block: 4% 0;
+  border: 3px solid #f21;
+  border-radius: 8px;
+}
 
+.title-user-info {
+  display: flex;
+  justify-content: center;
+  font-size: 40px;
+  text-transform: uppercase;
+  text-shadow: 0 0 5px #f21, 0 0 25px #f21;
+  font-family: arcadeclassic;
+}
+
+.line-title {
+  width: 80%;
+  padding: 2px;
+  background: #f21;
+  margin: 2% 0 0 10%;
+  border-radius: 2px;
 }
 
 .image-information-user {
@@ -18,12 +35,153 @@
 }
 
 .main-image-userpage {
-  width: 30%
+  width: 30%;
+}
+
+.box-save-button {
+  width: 40%;
+  color: #fef;
+  display: block;
+  text-align: justify;
+  line-height: 20px;
+}
+
+.file-path {
+  color: #f21;
+}
+
+.button-save {
+  margin-top: 20px;
+  text-align: center;
+}
+
+input[type="file"] {
+  color: transparent;
+}
+
+input[type="file"]::-webkit-file-upload-button {
+  visibility: hidden;
+}
+
+input[type="file"]::before {
+  content: "Carregar Save";
+  padding: 10px 59px;
+  background: #f21; 
+  color: #fef;
+  display: inline-block;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: 0.2s ease;
+  font-family: arcadeclassic;
+  font-size: 15px;
+}
+
+input[type="file"]:hover::before {
+  text-shadow: 0 0 5px #fef, 0 0 25px #fef, 0 0 50px #fef, 0 0 100px #fef, 0 0 150px #fef, 0 0 200px #fef;
+}
+
+input[type="file"]::after {
+  content: "Nenhum arquivo selecionado";
+  margin-left: 100px;
+}
+
+#confirmationDiv {
+  display: none;
+  margin-top: 10%;
+  color: #000;
+}
+
+.button-submit-save {
+  margin-top: 5%;
+  padding: 10px 66px;
+  border: none;
+  border-radius: 5px;
+  background: #f21;
+  color: #fef;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.button-submit-save:hover {
+  color: #000;
+  background-color: #fef;
+  box-shadow: 0 0 5px #fef, 0 0 25px #fef, 0 0 50px #fef, 0 0 100px #fef;
+}
+
+.box-description-user {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding-block: 10%;
+  line-height: 30px;
+}
+
+.info-save-button {
+  color: #000;
 }
 
 .info-description-user {
-  width: 30%;
+  font-size: 20px;
+  width: 40%;
+}
+
+.font-information-title {
+  font-weight: bold;
+  color: #f21;
+  font-family: arcadeclassic;
+}
+
+.buttons-user-page {
   padding-block: 10%;
+  width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+}
+
+.button-choose-user {
+  width: 150px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background: #f21;
+  text-transform: uppercase;
+  color: #fef;
+  cursor: pointer;
+  transition: 0.2s ease;
+  font-family: arcadeclassic;
+  font-size: 15px;
+}
+
+.button-choose-user:hover {
+  color: #f21;
+  background-color: #fef;
+  box-shadow: 0 0 5px #f21, 0 0 25px #f21, 0 0 50px #f21, 0 0 100px #f21;
+}
+
+#box-info-delete {
+  margin-top: 25px;
+  text-align: center;
+  display: none;
+}
+
+.button-delete-accept {
+  width: 50px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background: none;
+  margin-top: 10px;
+  text-transform: uppercase;
+  color: #f21;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.button-delete-accept:hover {
+  color: #fef;
+  background-color: none;
+  text-shadow: 0 0 5px #fef, 0 0 25px #fef, 0 0 50px #fef, 0 0 100px #fef;
 }

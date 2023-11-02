@@ -2,7 +2,7 @@
 function atualizarBackground() {
     const menuH = document.getElementById('menu-h');
     if (window.scrollY >= 770) { // Verifica se a posição Y é maior ou igual a 770
-      menuH.style.backgroundColor = 'lightblue'; // Defina a cor de fundo desejada
+      menuH.style.backgroundColor = '#000'; // Defina a cor de fundo desejada
     } else {
       menuH.style.backgroundColor = 'transparent'; // Volte ao fundo transparente se não estiver rolando até 770
     }
