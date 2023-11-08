@@ -1,7 +1,7 @@
 // Função para atualizar o estilo de fundo com base na posição de rolagem
 function atualizarBackground() {
     const menuH = document.getElementById('menu-h');
-    if (window.scrollY >= 770) { // Verifica se a posição Y é maior ou igual a 770
+    if (window.scrollY >= 585) { // Verifica se a posição Y é maior ou igual a 770
       menuH.style.backgroundColor = '#000'; // Defina a cor de fundo desejada
     } else {
       menuH.style.backgroundColor = 'transparent'; // Volte ao fundo transparente se não estiver rolando até 770
