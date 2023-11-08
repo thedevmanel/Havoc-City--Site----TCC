@@ -43,3 +43,4 @@ if ($gatilho ==  false) {
     header("Location: " . $url);
 
 }
+
