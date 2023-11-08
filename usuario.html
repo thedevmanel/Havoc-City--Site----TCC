@@ -69,11 +69,21 @@
                     <input type="submit" value="Editar" class="button-choose-user" />
                 </form>
 
-                <form action="edit.php" method="GET">
-                    <input type="text" name="id" id="id" hidden value="" />
+                <div class="box-button-delete">
+                    <button class="button-choose-user" id="button-delete" onclick="showMessage()"> delete </button>
 
-                    <input type="submit" value="Delete" class="button-choose-user" />
-                </form>
+                    <div id="box-info-delete">
+                        Deseja deletar o usuário?
+                        <form action="php/delete_user.php" method="GET">
+                            <input type="text" name="id" id="id" hidden value="<?php echo $id; ?>" />
+                            
+                            <input type="submit" id="delete" value="Sim" class="button-delete-accept" />
+                        </form>
+                        <button id="cancel" class="button-delete-accept" onclick="hideMessage()"> Não </button>
+                    </div>
+
+
+                </div>
             </div>
         </div>
     </div>
@@ -84,6 +94,7 @@
         </div>
     </div>
 
+    <script src="js/aparecerDelete.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const fileInput = document.getElementById("fileInput");

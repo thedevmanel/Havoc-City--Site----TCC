@@ -18,7 +18,6 @@
   justify-content: center;
   font-size: 40px;
   text-transform: uppercase;
-  text-shadow: 0 0 5px #f21, 0 0 25px #f21;
   font-family: arcadeclassic;
 }
 
@@ -39,7 +38,7 @@
 }
 
 .box-save-button {
-  width: 40%;
+  width: 30%;
   color: #fef;
   display: block;
   text-align: justify;
@@ -124,12 +123,13 @@ input[type="file"]::after {
 }
 
 .info-description-user {
-  font-size: 20px;
-  width: 40%;
+  font-size: 15px;
+  width: 30%;
 }
 
 .font-information-title {
   font-weight: bold;
+  font-size: 18px;
   color: #f21;
   font-family: arcadeclassic;
 }
@@ -142,7 +142,7 @@ input[type="file"]::after {
 }
 
 .button-choose-user {
-  width: 150px;
+  width: 180px;
   padding: 10px;
   border: none;
   border-radius: 5px;
@@ -181,7 +181,6 @@ input[type="file"]::after {
 }
 
 .button-delete-accept:hover {
-  color: #fef;
+  color: #000;
   background-color: none;
-  text-shadow: 0 0 5px #fef, 0 0 25px #fef, 0 0 50px #fef, 0 0 100px #fef;
 }

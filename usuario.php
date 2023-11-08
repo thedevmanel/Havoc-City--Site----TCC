@@ -18,7 +18,7 @@
 <body>
     <nav id="menu-h">
         <div class="logo-jogo-header">
-            <img src="https://fontmeme.com/permalink/231027/599d6f4224ce722a5f04605e3e9d1db4.png" class="logo-header" />
+            <img src="https://fontmeme.com/permalink/231030/8bed3f01dae90fa6adbb3602541bd9f2.png" class="logo-header" />
         </div>
 
         <ul>
@@ -37,7 +37,7 @@
                 <div class="box-save-button">
                     <div class="info-save-button">
                         Caso quiser, você pode adicionar seus dados salvos em nossos banco de dados. Para isso, clique no
-                        botão abaixo e navegue até: <br /> <span class="file-path">\AppData\Local\Havoc City </span>no explorador de arquivos.
+                        botão abaixo e navegue até: <br /> <span class="file-path">C:\Users\"meu_usario"\AppData\Local\Havoc_City </span>no explorador de arquivos.
                     </div>
                     <div class="button-save">
 
@@ -45,7 +45,8 @@
                         <div id="numericValues"></div>
                         
                         <!-- Campos de entrada existentes -->
-                        <form action="saveData.php" method="get">
+                        <form action="php/save_data.php" method="post">
+                            <input type="text" name="id_user" id="id_user" value="<?php echo "$id"; ?>" hidden />
                             <input type="text" name="seconds" id="seconds" name="seconds" readonly hidden />
                             <input type="text" name="minutes" id="minutes" name="minutes" readonly hidden />
                             <input type="text" name="hours" id="hours" name="hours" readonly hidden />

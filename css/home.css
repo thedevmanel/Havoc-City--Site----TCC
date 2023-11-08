@@ -160,14 +160,24 @@ table {
   border-radius: 30px;
 }
 
-.caixa-imagem-fundo {
+/* .caixa-imagem-fundo {
   width: 100%;
   opacity: 100%;
-  background-image: url("https://cdn.wallpapersafari.com/30/80/5NK6PB.jpg");
+  background-image: url("Imagens\ImageHome.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  padding-block: 30%;
+  padding-block: 25%;
+} */
+
+.box-image-home {
+  width: 100%;
+  
+}
+
+.image-home {
+  object-fit: cover;
+  width: 100%;
 }
 
 .imagem-fundo-homepage {
@@ -192,7 +202,6 @@ table {
   width: 60%;
   left: 20%;
   text-transform: uppercase;
-  
 }
 
 .titulo-conteudo-homepage {
@@ -208,7 +217,6 @@ table {
   width: 80%;
   padding-block: 30px 20px;
   text-align: center;
-  text-shadow: 0 0 5px  #f21, 0 0 10px #f21, 0 0 15px #f21, 0 0 20px #f21;;
   border-bottom: 2px solid #f21;
 }
 

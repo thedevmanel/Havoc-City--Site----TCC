@@ -20,7 +20,7 @@ include "php/verificacao_id.php";
 <body>
   <nav id="menu-h">
     <div class="logo-jogo-header">
-      <img src="https://fontmeme.com/permalink/230529/06735112d397a33f5f981ecb17a4ad41.png" class="logo-header" />
+      <img src="https://fontmeme.com/permalink/231027/599d6f4224ce722a5f04605e3e9d1db4.png" class="logo-header" />
     </div>
 
     <ul>
@@ -28,12 +28,15 @@ include "php/verificacao_id.php";
 
       <li><a href="Download.html">Download</a></li>
 
-      <li><a href="entrar.html">iniciar sessão</a></li>
+      <li><a href="entrar.html">iniciar sessao</a></li>
     </ul>
   </nav>
-  <div class="container-login">
+  <div class="container-form">
+  <div class="box-image-form">
+      <img src="Imagens/ImageEd.png" alt="" class="image-form">
+    </div>
     <div class="formulario-box">
-      <h2 class="titulo-formulario">Edição</h2>
+      <h2 class="titulo-formulario">Editar</h2>
       <form action="php/update_date_user.php" method="get">
         <input type="text" name="id" id="id" hidden value="<?php echo $id; ?>">
         <div class="user-box">
@@ -78,6 +81,11 @@ include "php/verificacao_id.php";
       </form>
     </div>
   </div>
+  <div class="footer">
+    <div class="info-footer">
+      ™ & ©2023 Havoc City. Todos os direitos reservados. Havoc City, Emanuel Rabello, Gustavo Azevedo, <br>Pedro Ogata,
+      Filipe Grande sao os desenvolvedores
+    </div>
 </body>
 
 </html>

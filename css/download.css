@@ -1,10 +1,21 @@
+body {
+  background: #000;
+}
+
+#menu-h {
+  background: #000;
+}
+
+#menu-h ul li a {
+  color: #fef;
+} 
 
 .button-download {
   width: 50%;
   opacity: 100%;
-  color: #fef;
-  background: #000;
-  margin: 15% 25%;
+  color: #000;
+  background: #fef;
+  margin: 10% 25% 3% 25%;
   border: none;
   border-radius: 5px;
   padding-block: 30px;
@@ -18,4 +29,49 @@
   color: #fef;
   background-color: #f21;
   box-shadow: 0 0 5px #f21, 0 0 25px #f21, 0 0 50px #f21, 0 0 100px #f21;
+}
+
+.title-download {
+  font-family: arcadeclassic;
+  color: #fef;
+  text-shadow: 0 0 5px #f21, 0 0 25px #f21, 0 0 50px #f21, 0 0 100px #f21;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10%;
+  font-size: 50px;
+}
+
+.font-download {
+  color: #fef;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15%;
+}
+
+.link-terms {
+  color: #f21;
+  font-family: arcadeclassic;
+  cursor: pointer;
+  margin-left: 5px;
+  text-decoration: none;
+  font-size: 20px;
+  margin-top: 3px;
+  transition: 0.2s ease;
+}
+
+.link-terms:visited {
+  color: #f21;
+  font-family: arcadeclassic;
+  cursor: pointer;
+  margin-left: 5px;
+  text-decoration: none;
+  font-size: 20px;
+  margin-top: 3px;
+  transition: 0.2s ease;
+}
+
+.link-terms:hover {
+  color: #fef;
 }
