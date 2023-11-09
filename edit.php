@@ -61,6 +61,10 @@ $url = "http://localhost//Havoc-City--Site----TCC/usuario.php?id=" . urlencode($
               <input type="checkbox" name="mostrar-senha" onclick="showPassword()" id="mostrar-senha" class="caixa-mostrar-senha" />
             </span>
           </div>
+          <p class="texto-link-para-cadastro">
+            mudou de ideia?
+            <a href="<?php echo $url; ?>" class="link-cadastro"> cancelar </a>
+          </p>
           <button type="submit">
             <span></span>
             <span></span>
@@ -70,15 +74,7 @@ $url = "http://localhost//Havoc-City--Site----TCC/usuario.php?id=" . urlencode($
           </button>
           <br />
           <br />
-          <p class="texto-link-para-cadastro">
-
-
-          <form action="usuario.php">
-            <input type="text" name="id" id="id" value="<?php echo $id; ?>" hidden />
-            <input type="submit" class="button-edicao" value="Cancelar Edição" />
-          </form>
-
-          </p>
+          
         </div>
       </form>
     </div>
