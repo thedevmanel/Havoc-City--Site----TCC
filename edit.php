@@ -4,6 +4,8 @@ $id = $_GET['id'];
 
 include "php/verificacao_id.php";
 
+$url = "http://localhost//Havoc-City--Site----TCC/usuario.php?id=" . urlencode($id);
+
 ?>
 
 <!DOCTYPE html>
@@ -28,7 +30,7 @@ include "php/verificacao_id.php";
 
       <li><a href="Download.html">Download</a></li>
 
-      <li><a href="entrar.html">iniciar sessao</a></li>
+      <li><a href="<?php echo $url; ?>">perfil</a></li>
     </ul>
   </nav>
   <div class="container-form">
