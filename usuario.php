@@ -16,6 +16,7 @@ $url = "http://localhost//Havoc-City--Site----TCC/usuario.php?id=" . urlencode($
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/usuario.css">
+    <link rel="shortcut icon" href="Imagens/logo.png" type="image/x-icon" />
     <title> Minha Conta </title>
 </head>
 

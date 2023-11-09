@@ -17,6 +17,7 @@ $url = "http://localhost//Havoc-City--Site----TCC/usuario.php?id=" . urlencode($
   <title> Página de Edição </title>
   <link rel="stylesheet" href="css/style.css" type="text/css" />
   <link rel="stylesheet" href="css/formulario.css" type="text/css" />
+  <link rel="shortcut icon" href="Imagens/logo.png" type="image/x-icon" />
 </head>
 
 <body>
@@ -74,7 +75,7 @@ $url = "http://localhost//Havoc-City--Site----TCC/usuario.php?id=" . urlencode($
           </button>
           <br />
           <br />
-          
+
         </div>
       </form>
     </div>
