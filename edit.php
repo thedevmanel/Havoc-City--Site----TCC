@@ -32,7 +32,7 @@ include "php/verificacao_id.php";
     </ul>
   </nav>
   <div class="container-form">
-  <div class="box-image-form">
+    <div class="box-image-form">
       <img src="Imagens/ImageEd.png" alt="" class="image-form">
     </div>
     <div class="formulario-box">
@@ -56,7 +56,7 @@ include "php/verificacao_id.php";
             <input type="password" name="senha" id="senha" required autocomplete="off" value="<?php echo $senha; ?>" />
             <label for="senha"> Senha </label>
             <span>
-              <input type="checkbox" name="mostrar-senha" id="mostrar-senha" class="caixa-mostrar-senha" />
+              <input type="checkbox" name="mostrar-senha" onclick="showPassword()" id="mostrar-senha" class="caixa-mostrar-senha" />
             </span>
           </div>
           <button type="submit">
@@ -86,6 +86,8 @@ include "php/verificacao_id.php";
       ™ & ©2023 Havoc City. Todos os direitos reservados. Havoc City, Emanuel Rabello, Gustavo Azevedo, <br>Pedro Ogata,
       Filipe Grande sao os desenvolvedores
     </div>
+    <script src="js/mostrarSenha.js"></script>
+
 </body>
 
 </html>
