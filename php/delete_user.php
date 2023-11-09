@@ -12,4 +12,6 @@ if (mysqli_query($conn, $delete)) {
 
 mysqli_close($conn);
 
-header('Location: http://localhost//Havoc-City--Site----TCC/entrar.html');
+header('Location: http://localhost//Havoc-City--Site----TCC/entrar.html')
+
+?>

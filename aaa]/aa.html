@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  /* Estilo base para a div que será animada */
+  .red-box {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    opacity: 0; /* Começa com opacidade 0 para estar invisível */
+    transition: opacity 0.5s; /* Define a transição suave de 0.5 segundos */
+  }
+</style>
+</head>
+<body>
+
+<!-- Botão para acionar a animação -->
+<button id="mostrarDiv">Mostrar Div</button>
+
+<!-- A div que será animada -->
+<div class="red-box" id="divAnimada"></div>
+
+<script>
+  // Quando o botão é clicado, a animação é acionada
+  document.getElementById("mostrarDiv").addEventListener("click", function() {
+    var divAnimada = document.getElementById("divAnimada");
+    divAnimada.style.opacity = 1; // Define a opacidade para 1 (totalmente visível)
+  });
+</script>
+
+</body>
+</html>

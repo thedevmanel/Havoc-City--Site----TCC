@@ -1,13 +1,3 @@
-<?php
-include "php/verificacao_id.php";
-
-include "php/time_records.php";
-
-include "php/pont_records.php";
-
-$url = "http://localhost//Havoc-City--Site----TCC/usuario.php?id=" . urlencode($id);
-
-?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -30,7 +20,7 @@ $url = "http://localhost//Havoc-City--Site----TCC/usuario.php?id=" . urlencode($
 
             <li><a href="Download.html">Download</a></li>
 
-            <li><a href="<?php echo $url; ?>">perfil</a></li>
+            <li><a href="">perfil</a></li>
         </ul>
     </nav>
     <div class="container-user">
@@ -39,15 +29,18 @@ $url = "http://localhost//Havoc-City--Site----TCC/usuario.php?id=" . urlencode($
             <div class="line-title"></div>
             <div class="box-description-user">
                 <div class="info-description-user">
-                    <span class="font-information-title"> Nome: </span> <?php echo $nome; ?> <br />
-                    <span class="font-information-title"> Nickname: </span> <?php echo $nickname; ?> <br />
-                    <span class="font-information-title"> E-mail: </span> <?php echo $email; ?> <br />
+                    <span class="font-information-title"> Nome: </span> José Ramos <br />
+                    <span class="font-information-title"> Nickname: </span> JoJoRa <br />
+                    <span class="font-information-title"> E-mail: </span> jose.ramos@gmail.com <br />
 
                 </div>
                 <div class="box-save-button">
                     <div class="info-save-button">
-                        Caso quiser, você pode adicionar seus dados salvos em nossos banco de dados. Para isso, clique no
-                        botão abaixo e navegue até: <br /> <span class="file-path">C:\Users\"meu_usario"\AppData\Local\Havoc_City </span>no explorador de arquivos.
+                        Caso quiser, você pode adicionar seus dados salvos em nossos banco de dados. Para isso, clique
+                        no
+                        botão abaixo e navegue até: <br /> <span
+                            class="file-path">C:\Users\"usuario"\AppData\Local\Havoc_City
+                        </span>no explorador de arquivos.
                     </div>
                     <div class="button-save">
 
@@ -55,12 +48,11 @@ $url = "http://localhost//Havoc-City--Site----TCC/usuario.php?id=" . urlencode($
                         <div id="numericValues"></div>
 
                         <!-- Campos de entrada existentes -->
-                        <form action="php/save_data.php" method="post">
-                            <input type="text" name="id_user" id="id_user" value="<?php echo "$id"; ?>" hidden />
-                            <input type="text" name="seconds" id="seconds" name="seconds" readonly hidden />
-                            <input type="text" name="minutes" id="minutes" name="minutes" readonly hidden />
-                            <input type="text" name="hours" id="hours" name="hours" readonly hidden />
-                            <input type="text" name="pontuation" id="pontuation" name="pontuation" readonly hidden />
+                        <form action="saveData.php" method="get">
+                            <input type="text" id="seconds" name="seconds" readonly hidden />
+                            <input type="text" id="minutes" name="minutes" readonly hidden />
+                            <input type="text" id="hours" name="hours" readonly hidden />
+                            <input type="text" id="pontuation" name="pontuation" readonly hidden />
 
                             <!-- Botão de confirmação e submit -->
                             <div id="confirmationDiv">
@@ -74,7 +66,7 @@ $url = "http://localhost//Havoc-City--Site----TCC/usuario.php?id=" . urlencode($
             </div>
             <div class="buttons-user-page">
                 <form action="edit.php" method="GET">
-                    <input type="text" name="id" id="id" hidden value="<?php echo $id; ?>" />
+                    <input type="text" name="id" id="id" hidden value="" />
 
                     <input type="submit" value="Editar" class="button-choose-user" />
                 </form>
@@ -85,7 +77,7 @@ $url = "http://localhost//Havoc-City--Site----TCC/usuario.php?id=" . urlencode($
                     <div id="box-info-delete">
                         Deseja deletar o usuário?
                         <form action="php/delete_user.php" method="GET">
-                            <input type="text" name="id" id="id" hidden value="<?php echo $id; ?>" />
+                            <input type="text" name="id" id="id" hidden value="" />
 
                             <input type="submit" id="delete" value="Sim" class="button-delete-accept" />
                         </form>
@@ -100,13 +92,13 @@ $url = "http://localhost//Havoc-City--Site----TCC/usuario.php?id=" . urlencode($
     <div class="container-ranking">
         <span class="title-raking"> rankings </span> <br />
         <div class="line-title"></div>
-        <div class="box-standard-rankings">
+        <div class="box-standard-rankings">   
             <div class="box-first-place">
                 <div class="type-ranking"> tempo </div>
-                <?php echo "$name_time_position[0]"; ?> tem o melhor tempo !!
+                IronMaiden tem o melhor tempo !!
 
-                <div class="records">
-                    <?php echo "$times_time_position[0]"; ?>
+                <div class="records"> 
+                    00:02:09
                     <span class="box-image-crown-ranking">
                         <img src="Imagens/crown.png" alt="crown" class="image-crown" />
                     </span><br />
@@ -117,41 +109,41 @@ $url = "http://localhost//Havoc-City--Site----TCC/usuario.php?id=" . urlencode($
 
                 <div class="list-players-ranking">
                     <div id="number-ranking">
-                        <span class="nome-ranking"> 1 - <?php echo "$name_time_position[0]"; ?></span>
-                        <span class="info-ranking"> <?php echo "$times_time_position[0]"; ?> </span>
-                        <span class="info-ranking"> <?php echo "$pontuations_time_position[0]"; ?> </span>
+                        <span class="nome-ranking"> 1 - IronMaiden</span>
+                        <span class="info-ranking"> 00:02:09 </span>
+                        <span class="info-ranking"> 200 </span>
                     </div>
                     <div id="number-ranking">
-                        <span class="nome-ranking"> 2 - <?php echo "$name_time_position[1]"; ?> </span>
-                        <span class="info-ranking"> <?php echo "$times_time_position[1]"; ?> </span>
-                        <span class="info-ranking"> <?php echo "$pontuations_time_position[1]"; ?> </span>
+                        <span class="nome-ranking"> 2 - Metallica </span>
+                        <span class="info-ranking"> 00:02:13 </span>
+                        <span class="info-ranking"> 100 </span>
                     </div>
                     <div id="number-ranking">
-                        <span class="nome-ranking"> 3 - <?php echo "$name_time_position[2]"; ?> </span>
-                        <span class="info-ranking"> <?php echo "$times_time_position[2]"; ?> </span>
-                        <span class="info-ranking"> <?php echo "$pontuations_time_position[2]"; ?> </span>
+                        <span class="nome-ranking"> 3 - ledzepelin </span>
+                        <span class="info-ranking"> 00:02:34 </span>
+                        <span class="info-ranking"> 100 </span>
                     </div>
                     <div id="number-ranking">
-                        <span class="nome-ranking"> 4 - <?php echo "$name_time_position[3]"; ?> </span>
-                        <span class="info-ranking"> <?php echo "$times_time_position[3]"; ?> </span>
-                        <span class="info-ranking"> <?php echo "$pontuations_time_position[3]"; ?> </span>
+                        <span class="nome-ranking"> 4 - kiss </span>
+                        <span class="info-ranking"> 00:03:01 </span>
+                        <span class="info-ranking"> 400 </span>
                     </div>
                     <div id="number-ranking">
-                        <span class="nome-ranking"> 5 - <?php echo "$name_time_position[4]"; ?> </span>
-                        <span class="info-ranking"> <?php echo "$times_time_position[4]"; ?> </span>
-                        <span class="info-ranking"> <?php echo "$pontuations_time_position[4]"; ?> </span>
+                        <span class="nome-ranking"> 5 - queen </span>
+                        <span class="info-ranking"> 00:03:13 </span>
+                        <span class="info-ranking"> 100 </span>
                     </div>
                 </div>
             </div>
         </div>
-
-        <div class="box-standard-rankings">
+        
+        <div class="box-standard-rankings">   
             <div class="box-first-place">
                 <div class="type-ranking"> Pontuacao </div>
-                <?php echo "$name_points_position[0]"; ?> tem o melhor tempo !!
+                IronMaiden tem o melhor tempo !!
 
-                <div class="records">
-                    <?php echo "$pontuations_points_position[0]"; ?>
+                <div class="records"> 
+                    400
                     <span class="box-image-crown-ranking">
                         <img src="Imagens/crown.png" alt="crown" class="image-crown" />
                     </span><br />
@@ -162,29 +154,29 @@ $url = "http://localhost//Havoc-City--Site----TCC/usuario.php?id=" . urlencode($
 
                 <div class="list-players-ranking">
                     <div id="number-ranking">
-                        <span class="nome-ranking"> 1 - <?php echo "$name_points_position[0]"; ?></span>
-                        <span class="info-ranking"> <?php echo "$times_points_position[0]"; ?> </span>
-                        <span class="info-ranking"> <?php echo "$pontuations_points_position[0]"; ?> </span>
+                        <span class="nome-ranking"> 1 - IronMaiden</span>
+                        <span class="info-ranking"> 00:02:09 </span>
+                        <span class="info-ranking"> 200 </span>
                     </div>
                     <div id="number-ranking">
-                        <span class="nome-ranking"> 2 - <?php echo "$name_points_position[1]"; ?> </span>
-                        <span class="info-ranking"> <?php echo "$times_points_position[1]"; ?> </span>
-                        <span class="info-ranking"> <?php echo "$pontuations_points_position[1]"; ?> </span>
+                        <span class="nome-ranking"> 2 - Metallica </span>
+                        <span class="info-ranking"> 00:02:13 </span>
+                        <span class="info-ranking"> 100 </span>
                     </div>
                     <div id="number-ranking">
-                        <span class="nome-ranking"> 3 - <?php echo "$name_points_position[2]"; ?> </span>
-                        <span class="info-ranking"> <?php echo "$times_points_position[2]"; ?> </span>
-                        <span class="info-ranking"> <?php echo "$pontuations_points_position[2]"; ?> </span>
+                        <span class="nome-ranking"> 3 - ledzepelin </span>
+                        <span class="info-ranking"> 00:02:34 </span>
+                        <span class="info-ranking"> 100 </span>
                     </div>
                     <div id="number-ranking">
-                        <span class="nome-ranking"> 4 - <?php echo "$name_points_position[3]"; ?> </span>
-                        <span class="info-ranking"> <?php echo "$times_points_position[3]"; ?> </span>
-                        <span class="info-ranking"> <?php echo "$pontuations_points_position[3]"; ?> </span>
+                        <span class="nome-ranking"> 4 - kiss </span>
+                        <span class="info-ranking"> 00:03:01 </span>
+                        <span class="info-ranking"> 400 </span>
                     </div>
                     <div id="number-ranking">
-                        <span class="nome-ranking"> 5 - <?php echo "$name_points_position[4]"; ?> </span>
-                        <span class="info-ranking"> <?php echo "$times_points_position[4]"; ?> </span>
-                        <span class="info-ranking"> <?php echo "$pontuations_points_position[4]"; ?> </span>
+                        <span class="nome-ranking"> 5 - queen </span>
+                        <span class="info-ranking"> 00:03:13 </span>
+                        <span class="info-ranking"> 100 </span>
                     </div>
                 </div>
             </div>
@@ -192,27 +184,28 @@ $url = "http://localhost//Havoc-City--Site----TCC/usuario.php?id=" . urlencode($
     </div>
     <div class="footer">
         <div class="info-footer">
-            ™ & ©2023 Havoc City. Todos os direitos reservados. Havoc City, Emanuel Rabello, Gustavo Azevedo, <br>Pedro
+            ™ & ©2023 Havoc City. Todos os direitos reservados. Havoc City, Emanuel Rabello, Gustavo Azevedo,
+            <br />Pedro
             Ogata, Filipe Grande sao os desenvolvedores
         </div>
     </div>
 
     <script src="js/aparecerDelete.js"></script>
     <script>
-        /* Aperecer opção de  baixar arquivo de save*/
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
             const fileInput = document.getElementById("fileInput");
             const confirmationDiv = document.getElementById("confirmationDiv");
 
-            fileInput.addEventListener("change", function(event) {
+            fileInput.addEventListener("change", function (event) {
                 const selectedFile = event.target.files[0];
 
                 if (selectedFile) {
                     const reader = new FileReader();
 
-                    reader.onload = function(e) {
+                    reader.onload = function (e) {
                         const fileText = e.target.result;
 
+                        // Use a regular expression to extract numeric values from lines
                         const regex =
                             /(?:seconds|minutes|hours|pontuation)="(\d+\.\d+)"/g;
                         let match;
@@ -240,9 +233,3 @@ $url = "http://localhost//Havoc-City--Site----TCC/usuario.php?id=" . urlencode($
 </body>
 
 </html>
-
-<!-- pontuacao -->
-<!-- SELECT u.nickname FROM usuario u JOIN jogo j ON u.id_user = j.id_user ORDER BY j.pontuacao DESC, j.tempo ASC LIMIT 5; -->
-
-<!-- tempo -->
-<!-- SELECT u.nickname FROM usuario u JOIN jogo j ON u.id_user = j.id_user ORDER BY j.tempo ASC, j.pontuacao DESC LIMIT 5; -->

@@ -6,10 +6,9 @@
 }
 
 .container-descriptions {
-  margin-top: 5%;
+  margin-top: 3%;
   width: 70%;
   padding-block: 4% 0;
-  border: 3px solid #f21;
   border-radius: 8px;
 }
 
@@ -25,16 +24,28 @@
   width: 80%;
   padding: 2px;
   background: #f21;
-  margin: 2% 0 0 10%;
+  margin-left: 10%;
   border-radius: 2px;
 }
 
-.image-information-user {
+.box-description-user {
   width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding-block: 5%;
+  line-height: 30px;
 }
 
-.main-image-userpage {
+.info-description-user {
+  font-size: 15px;
   width: 30%;
+}
+
+.font-information-title {
+  font-weight: bold;
+  font-size: 18px;
+  color: #f21;
+  font-family: arcadeclassic;
 }
 
 .box-save-button {
@@ -94,44 +105,28 @@ input[type="file"]::after {
 
 .button-submit-save {
   margin-top: 5%;
-  padding: 10px 66px;
+  width: 180px;
+  padding: 10px;
   border: none;
   border-radius: 5px;
-  background: #f21;
+  background: #000;
   color: #fef;
   text-transform: uppercase;
   cursor: pointer;
   transition: 0.2s ease;
+  font-family: arcadeclassic;
+  font-size: 15px;
+
 }
 
 .button-submit-save:hover {
-  color: #000;
-  background-color: #fef;
-  box-shadow: 0 0 5px #fef, 0 0 25px #fef, 0 0 50px #fef, 0 0 100px #fef;
-}
-
-.box-description-user {
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-  padding-block: 10%;
-  line-height: 30px;
+  color: #fef;
+  background-color: #f21;
+  box-shadow: 0 0 5px #f21, 0 0 25px #f21, 0 0 50px #f21, 0 0 100px #f21;
 }
 
 .info-save-button {
   color: #000;
-}
-
-.info-description-user {
-  font-size: 15px;
-  width: 30%;
-}
-
-.font-information-title {
-  font-weight: bold;
-  font-size: 18px;
-  color: #f21;
-  font-family: arcadeclassic;
 }
 
 .buttons-user-page {
@@ -146,7 +141,7 @@ input[type="file"]::after {
   padding: 10px;
   border: none;
   border-radius: 5px;
-  background: #f21;
+  background: #000;
   text-transform: uppercase;
   color: #fef;
   cursor: pointer;
@@ -156,8 +151,8 @@ input[type="file"]::after {
 }
 
 .button-choose-user:hover {
-  color: #f21;
-  background-color: #fef;
+  color: #fef;
+  background-color: #f21;
   box-shadow: 0 0 5px #f21, 0 0 25px #f21, 0 0 50px #f21, 0 0 100px #f21;
 }
 
@@ -183,4 +178,104 @@ input[type="file"]::after {
 .button-delete-accept:hover {
   color: #000;
   background-color: none;
+}
+
+.container-ranking {
+  width: 100%;
+  background: #000;
+  padding-block: 5%;
+}
+
+.title-raking {
+  display: flex;
+  justify-content: center;
+  font-size: 40px;
+  text-transform: uppercase;
+  font-family: arcadeclassic;
+  color: #fef;
+}
+
+.box-standard-rankings {
+  width: 88%;
+  display: flex;
+  justify-content: space-evenly;
+  margin-left: 6%;
+  padding-block: 0 10%;
+}
+
+.type-ranking {
+  color: #f21;
+  font-family: arcadeclassic;
+  font-size: 50px;
+  padding-block: 0 5%;
+} 
+
+.box-first-place {
+  width: 35%;
+  padding-block: 2%;
+  color: #fef;
+  font-family: arcadeclassic;
+  font-size: 35px;
+  align-items: center;
+  text-align: justify;
+}
+
+.box-image-crown-ranking {
+  width: 10%;
+}
+
+.records {
+  font-family: arcadeclassic;
+  color: #f21;
+  font-size: 50px;
+  margin-top: 10%;
+}
+
+.image-crown {
+  width: 40px;
+  object-fit: cover;
+  margin-top: 8px;
+  margin-left: 5%;
+}
+
+.box-tops-player {
+  width: 50%;
+  padding-block: 2% 0%;
+}
+
+.title-tops-players {
+  font-family: arcadeclassic;
+  color: #fef;
+  font-size: 30px;
+}
+
+.list-players-ranking {
+  font-family: arcadeclassic;
+  color: #fef;
+  font-size: 25px;
+  padding-block: 3% 0;
+}
+
+#number-ranking {
+  width: 100%;
+  font-family: arcadeclassic;
+  color: #fef;
+  font-size: 25px;
+  padding-block: 1%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nome-ranking {
+  width: 30%;
+  font-family: arcadeclassic;
+  color: #fef;
+  font-size: 25px;
+}
+
+.info-ranking {
+  width: 7%;
+  font-family: arcadeclassic;
+  color: #fef;
+  font-size: 25px;
 }

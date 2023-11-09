@@ -37,13 +37,12 @@ body {
 #menu-h {
   position: fixed;
   top: 0%;
-  background: transparent;
+  background: #fef;
   width: 100%;
   display: flex;
   justify-content: right;
   text-transform: uppercase;
   font-size: 13px;
-  background: transparent;
 }
 #menu-h ul {
   list-style: none;

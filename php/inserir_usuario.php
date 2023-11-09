@@ -40,5 +40,3 @@ $inserir_dados = "INSERT INTO `usuario` VALUES ('$id', '$nome', '$nickname', '$e
     $url = "http://localhost//Havoc-City--Site----TCC/usuario.php?id=" . urlencode($id);
 
     header('Location: ' . $url);
-
-    
