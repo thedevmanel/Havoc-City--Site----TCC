@@ -241,9 +241,3 @@ $url = "http://localhost//Havoc-City--Site----TCC/usuario.php?id=" . urlencode($
 </body>
 
 </html>
-
-<!-- pontuacao -->
-<!-- SELECT u.nickname FROM usuario u JOIN jogo j ON u.id_user = j.id_user ORDER BY j.pontuacao DESC, j.tempo ASC LIMIT 5; -->
-
-<!-- tempo -->
-<!-- SELECT u.nickname FROM usuario u JOIN jogo j ON u.id_user = j.id_user ORDER BY j.tempo ASC, j.pontuacao DESC LIMIT 5; -->
