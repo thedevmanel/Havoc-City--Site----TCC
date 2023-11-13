@@ -59,7 +59,7 @@ $url = "http://localhost//Havoc-City--Site----TCC/usuario.php?id=" . $_SESSION['
                 <div class="box-save-button">
                     <div class="info-save-button">
                         Caso quiser, você pode adicionar seus dados salvos em nossos banco de dados. Para isso, clique no
-                        botão abaixo e navegue até: <br /> <span class="file-path">C:\Users\"meu_usario"\AppData\Local\Havoc_City </span>no explorador de arquivos.
+                        botão abaixo e navegue até: <br /> <span class="file-path">C:\Users\"meu_usuario"\AppData\Local\Havoc_City </span>no explorador de arquivos.
                     </div>
                     <div class="button-save">
 

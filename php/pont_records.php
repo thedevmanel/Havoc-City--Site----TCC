@@ -9,7 +9,6 @@ $i = 0;
 
 if (($points_select) && ($points_select->num_rows != 0)) {
     while ($rows = mysqli_fetch_array($points_select)) {
-        // echo "<li>" . $rows["nickname"] . "</li>";
         $name_points_position[$i] = $rows['nickname'];
         $times_points_position[$i] = $rows['tempo'];
         $pontuations_points_position[$i] = $rows['pontuacao'];
@@ -18,10 +17,6 @@ if (($points_select) && ($points_select->num_rows != 0)) {
     }
 } else {
 }
-
-//  echo "$name_points_position[0] <br />";
-//  echo "$times_points_position[0] <br />";
-//  echo "$pontuations_points_position[0]";
 
 mysqli_close($conn);
 

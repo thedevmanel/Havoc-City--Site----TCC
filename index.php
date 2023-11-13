@@ -69,7 +69,7 @@ else {
             Primeiramente você deverá ir para a página de "Download". Para isso, clique no botão que está na parte mais
             acima da página escrita "Download", ou clicar no link logo abaixo do texto
             <br /><br />
-            Para efetuar o download <a href="download.html" class="link-homepage"> Clique Aqui </a>
+            Para efetuar o download <a href="download.php" class="link-homepage"> Clique Aqui </a>
             <!-- <p>Posição Y: <span id="scrollY">0</span></p>    -->
         </p>
 
