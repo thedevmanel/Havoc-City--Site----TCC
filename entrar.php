@@ -1,3 +1,17 @@
+<?php
+
+session_start();
+
+if (!isset($_SESSION['logged_user'])) {
+}
+else {
+    $url = "http://localhost//Havoc-City--Site----TCC/usuario.php?id=" . urlencode($_SESSION['logged_user']);
+
+    header("Location: " . $url);
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -18,11 +32,11 @@
         </div>
 
         <ul>
-            <li><a href="index.html">Home </a></li>
+            <li><a href="index.php">Home </a></li>
 
-            <li><a href="Download.html">Download</a></li>
+            <li><a href="Download.php">Download</a></li>
 
-            <li><a href="entrar.html">iniciar sessao</a></li>
+            <li><a href="entrar.php">iniciar sessao</a></li>
         </ul>
     </nav>
     <div class="container-form">
@@ -31,7 +45,7 @@
         </div>
         <div class="formulario-box">
             <h2 class="titulo-formulario">LOGIN</h2>
-            <form action="php/selecionar_login.php">
+            <form action="php/selecionar_login.php" method="post">
                 <div class="user-box">
                     <input type="text" name="email" id="email" required autocomplete="off" />
                     <label for="email"> Email </label>
@@ -45,7 +59,7 @@
                     </span>
                 </div>
                 <p class="texto-link-para-cadastro">
-                    Nao possui uma conta?<a href="cadastro.html" class="link-cadastro">
+                    Nao possui uma conta?<a href="cadastro.php" class="link-cadastro">
                         cadastre aqui
                     </a>
                 </p>

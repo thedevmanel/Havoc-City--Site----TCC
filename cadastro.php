@@ -1,3 +1,16 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['logged_user'])) {
+}
+else {
+    $url = "http://localhost//Havoc-City--Site----TCC/usuario.php?id=" . urlencode($_SESSION['logged_user']);
+
+    header("Location: " . $url);
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -17,11 +30,11 @@
     </div>
 
     <ul>
-      <li><a href="index.html">Home </a></li>
+      <li><a href="index.php">Home </a></li>
 
-      <li><a href="Download.html">Download</a></li>
+      <li><a href="Download.php">Download</a></li>
 
-      <li><a href="entrar.html">iniciar sessao</a></li>
+      <li><a href="entrar.php">iniciar sessao</a></li>
     </ul>
   </nav>
   <div class="container-form">
@@ -52,7 +65,7 @@
           </div>
           <p class="texto-link-para-cadastro">
             Se possui uma conta
-            <a href="entrar.html" class="link-cadastro"> efetuar login </a>
+            <a href="entrar.php" class="link-cadastro"> efetuar login </a>
           </p>
           <button type="submit">
             <span></span>

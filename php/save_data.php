@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 include "conexao.php";
 
 $seconds = $_POST['seconds'];
@@ -21,3 +23,12 @@ if (mysqli_query($conn, $insert)) {
 } else {
     echo "erro" . $insert, "<br>" . mysqli_error($conn);
 }
+
+mysqli_close($conn);
+
+$url = "http://localhost//Havoc-City--Site----TCC/usuario.php?id=" . urlencode($_SESSION['logged_user']);
+
+echo "<script>
+    alert('As estatíticas do seu jogo foram salvas devidamente!!');
+    window.location.href='$url';
+</script>"; 

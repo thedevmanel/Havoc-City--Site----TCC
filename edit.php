@@ -27,9 +27,9 @@ $url = "http://localhost//Havoc-City--Site----TCC/usuario.php?id=" . urlencode($
     </div>
 
     <ul>
-      <li><a href="index.html">Home </a></li>
+      <li><a href="index.php">Home </a></li>
 
-      <li><a href="Download.html">Download</a></li>
+      <li><a href="Download.php">Download</a></li>
 
       <li><a href="<?php echo $url; ?>">perfil</a></li>
     </ul>

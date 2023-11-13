@@ -1,9 +1,11 @@
 <?php
 
+session_start();
+
 include "conexao.php";
 
-$email = $_GET['email'];
-$senha = $_GET['senha'];
+$email = $_POST['email'];
+$senha = $_POST['senha'];
 // $senha = md5($senha);
 // $senha = md5($senha);
 
@@ -20,6 +22,7 @@ if (($select) && ($select->num_rows != 0)) {
         if (($detect_email == $email) && ($detect_senha == $senha)) {
             $gatilho = true;
             $id = $rows['id_user'];
+            $_SESSION['logged_user'] = $id;
             $nome = $rows['nome'];
             $nickname = $rows['nickname'];
         } else {
@@ -32,13 +35,13 @@ if ($gatilho ==  false) {
 
     echo "<script language='javascript' type='text/javascript'>
         alert('O login ou senha digitados está incorreto');
-        window.location.href='http://localhost//Havoc-City--Site----TCC/entrar.html';
+        window.location.href='http://localhost//Havoc-City--Site----TCC/entrar.php';
     </script>";
 
 } else {
     mysqli_close($conn);
     
-    $url = "http://localhost//Havoc-City--Site----TCC/usuario.php?id=" . urlencode($id);
+    $url = "http://localhost//Havoc-City--Site----TCC/usuario.php?id=" . urlencode($_SESSION['logged_user']);
     
     header("Location: " . $url);
 

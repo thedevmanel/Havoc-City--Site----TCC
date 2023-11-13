@@ -1,13 +1,24 @@
 <?php
+session_start();
+
+if (!isset($_SESSION['logged_user'])) {
+    header("Location: http://localhost//Havoc-City--Site----TCC/entrar.php");
+}
+
+if (isset($_GET['exit'])) {
+    unset($_SESSION['logged_user']);
+    header("Location: http://localhost//Havoc-City--Site----TCC/entrar.php");
+}
+
 include "php/verificacao_id.php";
 
 include "php/time_records.php";
 
 include "php/pont_records.php";
 
-$url = "http://localhost//Havoc-City--Site----TCC/usuario.php?id=" . urlencode($id);
+$url = "http://localhost//Havoc-City--Site----TCC/usuario.php?id=" . $_SESSION['logged_user'];
 
-?>
+?>  
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -27,9 +38,9 @@ $url = "http://localhost//Havoc-City--Site----TCC/usuario.php?id=" . urlencode($
         </div>
 
         <ul>
-            <li><a href="index.html">Home </a></li>
+            <li><a href="index.php">Home </a></li>
 
-            <li><a href="Download.html">Download</a></li>
+            <li><a href="Download.php">Download</a></li>
 
             <li><a href="<?php echo $url; ?>">perfil</a></li>
         </ul>
@@ -79,6 +90,8 @@ $url = "http://localhost//Havoc-City--Site----TCC/usuario.php?id=" . urlencode($
 
                     <input type="submit" value="Editar" class="button-choose-user" />
                 </form>
+
+                <a href="http://localhost//Havoc-City--Site----TCC/usuario.php?exit=true"><button class="button-choose-user"> sair </button></a>
 
                 <div class="box-button-delete">
                     <button class="button-choose-user" id="button-delete" onclick="showMessage()"> delete </button>

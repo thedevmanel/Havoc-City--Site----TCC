@@ -1,3 +1,13 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['logged_user'])) {
+}
+else {
+    $url = "http://localhost//Havoc-City--Site----TCC/usuario.php?id=" . urlencode($_SESSION['logged_user']);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -20,11 +30,22 @@
 		</div>
 
 		<ul>
-			<li><a href="index.html">Home </a></li>
+			<li><a href="index.php">Home </a></li>
 
-			<li><a href="Download.html">Download</a></li>
+			<li><a href="Download.php">Download</a></li>
 
-			<li><a href="entrar.html">iniciar sessao</a></li>
+			<?php
+                    if (!isset($_SESSION['logged_user'])) {
+                        echo '
+                        <li><a href="entrar.php">iniciar sessao</a></li>
+                        ';
+                    }
+                    else {
+                        echo '
+                        <li><a href="' . $url . '"> perfil </a></li>
+                        ';
+                    }
+                ?>
 		</ul>
 	</nav>
 	<span class="title-download"> Baixe o nosso jogo </span>

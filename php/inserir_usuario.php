@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 include 'conexao.php';
 
 $id = uniqid();
@@ -22,8 +24,8 @@ if (($select) && ($select->num_rows != 0)) {
             mysqli_close($conn);
 
             echo "<script>
-                alert('Email já Registrado!!');
-                window.location.href='http://localhost//Havoc-City--Site----TCC/cadastro.html';
+                alert('Email já esta Registrado!!');
+                window.location.href='http://localhost//Havoc-City--Site----TCC/cadastro.php';
             </script>";
         } 
     }
@@ -31,6 +33,7 @@ if (($select) && ($select->num_rows != 0)) {
 $inserir_dados = "INSERT INTO `usuario` VALUES ('$id', '$nome', '$nickname', '$email', '$senha')";
 
     if (mysqli_query($conn, $inserir_dados)) {
+        $_SESSION['logged_user'] = $id;
     } else {
         echo "erro" . $inserir_dados, "<br>" . mysqli_error($conn);
     }
