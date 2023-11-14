@@ -1,0 +1,80 @@
+.container-adm {
+  width: 100%;
+  display: flex;
+  padding-block: 5%;
+  justify-content: center;
+  align-items: center;
+}
+
+.description-adm {
+  width: 80%;
+}
+
+.title-adm {
+  font-family: arcadeclassic;
+  color: #000;
+  font-size: 50px;
+}
+
+.line-title-adm {
+  width: 100%;
+  padding: 2px;
+  background: #f21;
+  margin-left: 0;
+  border-radius: 2px;
+}
+
+.container-data-collection {
+  width: 100%;
+  margin-top: 5%;
+  display: block;
+  font-family: arcadeclassic;
+  font-size: 40px;
+}
+
+.box-data-collection {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.box-data-dc {
+  width: 30%;
+  margin-top: 3%;
+  font-size: 30px;
+  border: 5px solid #ddd;
+  border-radius: 5px;
+  padding-block: 4%;
+}   
+
+.data-fonts {
+  width: 80%;
+  height: 100%;
+  margin-left: 10%;
+  font-family: arcadeclassic;
+}
+
+.box-button-edit {
+  position: relative;
+  text-align: center;
+  padding-block: 0 5%;
+}
+
+.button-edit {
+  border: none; 
+  width: 300px;
+  background: #fef;
+  padding: 10px;
+  text-transform: uppercase;
+  color: #f21;
+  font-size: 20px;
+  font-family: arcadeclassic;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.button-edit:hover {
+  background: #f21;
+  color: #fef;
+  box-shadow: 0 0 5px #f21, 0 0 25px #f21, 0 0 50px #f21, 0 0 100px #f21;
+}
