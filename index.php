@@ -2,10 +2,14 @@
 session_start();
 
 if (!isset($_SESSION['logged_user'])) {
-}
-else {
+} else {
     $url = "http://localhost//Havoc-City--Site----TCC/usuario.php?id=" . urlencode($_SESSION['logged_user']);
 }
+
+if (!isset($_SESSION['logged_adm'])) {
+} else {
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -27,8 +31,7 @@ else {
             <img src="Imagens/ImageHomeBack.png" alt="" class="image-home" />
         </div>
         <div class="conteudo-imagem">
-            <img src="https://fontmeme.com/permalink/231027/ca25ece0c2fd36fd47485912314e5110.png"
-                class="logo-homepage" />
+            <img src="https://fontmeme.com/permalink/231027/ca25ece0c2fd36fd47485912314e5110.png" class="logo-homepage" />
         </div>
     </div>
 
@@ -46,19 +49,33 @@ else {
                 <li><a href="Download.php">Download</a></li>
 
                 <?php
-                    if (!isset($_SESSION['logged_user'])) {
-                        echo '
+                if (!isset($_SESSION['logged_user']) && !isset($_SESSION['logged_adm'])) {
+                    echo '
                         <li><a href="entrar.php">iniciar sessao</a></li>
                         ';
-                    }
-                    else {
-                        echo '
+                } else if (isset($_SESSION['logged_adm'])) {
+                    echo '
+                        <li><a href="http://localhost//Havoc-City--Site----TCC/adm_page.php">admin</a></li>
+                        ';
+                } else {
+                    echo '
                         <li><a href="' . $url . '"> perfil </a></li>
                         ';
-                    }
+                }
                 ?>
             </ul>
         </ul>
+        <?php
+        if (!isset($_SESSION['logged_adm']) && !isset($_SESSION['logged_user'])) {
+            echo '
+                <a href="http://localhost//Havoc-City--Site----TCC/adm_login.php" class="link-adm">
+                    <button class=button-admin>
+                        admin
+                    </button>
+                </a>
+            ';
+        }
+        ?>
     </nav>
 
     <div class="box-conteudo-1">
@@ -84,8 +101,7 @@ else {
     </div>
     <div class="caixa-texto-1">
         <div class="conteudo-imagem-texto-1">
-            <img src="https://static.vecteezy.com/system/resources/previews/005/337/799/original/icon-image-not-found-free-vector.jpg"
-                alt="" class="imagem-conteudo-1" />
+            <img src="https://static.vecteezy.com/system/resources/previews/005/337/799/original/icon-image-not-found-free-vector.jpg" alt="" class="imagem-conteudo-1" />
         </div>
         <p class="conteudo-texto-1">
             Havoc city é um jogo plataforma em 2D com inspirações em jogos retrôs dos anos 80 e 90, com gráficos,
@@ -110,8 +126,7 @@ else {
         </p>
 
         <div class="conteudo-imagem-texto-1">
-            <img src="https://static.vecteezy.com/system/resources/previews/005/337/799/original/icon-image-not-found-free-vector.jpg"
-                alt="" class="imagem-conteudo-1" />
+            <img src="Imagens/gameplayImage.png" alt="" class="imagem-conteudo-1" />
         </div>
     </div>
     <div class="footer">

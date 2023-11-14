@@ -49,7 +49,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  
 }
 
 #menu-h ul li a {
@@ -77,6 +76,37 @@ body {
 .botoes-navbar {
   display: flex;
   padding-left: 20%;
+}
+
+.link-adm {
+  text-decoration: none;
+  font-family: arcadeclassic;
+}
+
+.link-adm:visited {
+  text-decoration: none;
+  font-family: arcadeclassic;
+}
+
+.button-admin {
+  width: 70px;
+  height: 35px;
+  color: #fef;
+  display: grid;
+  place-items: center;
+  transition: 0.2s;
+  text-decoration: none;
+  font-family: arcadeclassic;
+  font-size: 15px;
+  background-color: #f21;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+}
+
+.button-admin:hover {
+  background-color: #f21;
+  text-shadow: 0 0 5px #fef, 0 0 10px #fef, 0 0 20px #fef, 0 0 40px #fef;
 }
 
 /* h1 {
@@ -172,7 +202,6 @@ table {
 
 .box-image-home {
   width: 100%;
-  
 }
 
 .image-home {
@@ -233,7 +262,6 @@ table {
 .conteudo-imagem-texto-1 {
   width: 30%;
   padding-block: 20px 100px;
-  
 }
 
 .conteudo-texto-1 {
@@ -264,5 +292,5 @@ table {
 
 .link-homepage:hover {
   color: #f21;
-  text-shadow: 0 0 5px  #f21, 0 0 10px #f21, 0 0 20px #f21, 0 0 40px #f21;;
+  text-shadow: 0 0 5px #f21, 0 0 10px #f21, 0 0 20px #f21, 0 0 40px #f21;
 }

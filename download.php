@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 
 if (!isset($_SESSION['logged_user'])) {
@@ -6,6 +7,7 @@ if (!isset($_SESSION['logged_user'])) {
 else {
     $url = "http://localhost//Havoc-City--Site----TCC/usuario.php?id=" . urlencode($_SESSION['logged_user']);
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -35,17 +37,33 @@ else {
 			<li><a href="Download.php">Download</a></li>
 
 			<?php
-                    if (!isset($_SESSION['logged_user'])) {
-                        echo '
+                if (!isset($_SESSION['logged_user']) && !isset($_SESSION['logged_adm'])) {
+                    echo '
                         <li><a href="entrar.php">iniciar sessao</a></li>
                         ';
-                    }
-                    else {
-                        echo '
+                } else if (isset($_SESSION['logged_adm'])) {
+                    echo '
+                        <li><a href="http://localhost//Havoc-City--Site----TCC/adm_page.php">admin</a></li>
+                        ';
+                } else {
+                    echo '
                         <li><a href="' . $url . '"> perfil </a></li>
                         ';
-                    }
+                }
                 ?>
+            </ul>
+        </ul>
+        <?php
+        if (!isset($_SESSION['logged_adm']) && !isset($_SESSION['logged_user'])) {
+            echo '
+                <a href="http://localhost//Havoc-City--Site----TCC/adm_login.php" class="link-adm">
+                    <button class=button-admin>
+                        admin
+                    </button>
+                </a>
+            ';
+        }
+        ?>	
 		</ul>
 	</nav>
 	<span class="title-download"> Baixe o nosso jogo </span>

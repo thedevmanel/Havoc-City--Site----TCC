@@ -2,11 +2,10 @@
 session_start();
 
 if (!isset($_SESSION['logged_user'])) {
-}
-else {
-    $url = "http://localhost//Havoc-City--Site----TCC/usuario.php?id=" . urlencode($_SESSION['logged_user']);
+} else {
+  $url = "http://localhost//Havoc-City--Site----TCC/usuario.php?id=" . urlencode($_SESSION['logged_user']);
 
-    header("Location: " . $url);
+  header("Location: " . $url);
 }
 
 ?>
@@ -20,14 +19,17 @@ else {
   <title>Realizar Cadastro</title>
   <link rel="stylesheet" href="css/style.css" type="text/css" />
   <link rel="stylesheet" href="css/formulario.css" type="text/css" />
+  <link rel="shortcut icon" href="" type="image x/icon" />
   <link rel="shortcut icon" href="Imagens/logo.png" type="image/x-icon" />
 </head>
 
 <body>
   <nav id="menu-h-register">
-    <div class="logo-jogo-header">
-      <img src="https://fontmeme.com/permalink/231030/8bed3f01dae90fa6adbb3602541bd9f2.png" class="logo-header" />
-    </div>
+    <a href="adm_login.php">
+      <div class="logo-jogo-header">
+        <img src="https://fontmeme.com/permalink/231030/8bed3f01dae90fa6adbb3602541bd9f2.png" class="logo-header" />
+      </div>
+    </a>
 
     <ul>
       <li><a href="index.php">Home </a></li>
@@ -59,8 +61,7 @@ else {
             <input type="password" name="senha" id="senha" required autocomplete="off" />
             <label for="senha"> Senha </label>
             <span>
-              <input type="checkbox" name="mostrar-senha" onclick="showPassword()" id="mostrar-senha"
-                class="caixa-mostrar-senha" />
+              <input type="checkbox" name="mostrar-senha" onclick="showPassword()" id="mostrar-senha" class="caixa-mostrar-senha" />
             </span>
           </div>
           <p class="texto-link-para-cadastro">
