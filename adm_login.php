@@ -1,3 +1,20 @@
+<?php
+
+session_start();
+
+if (isset($_SESSION['logged_user'])) {
+    echo "<script>
+        alert('Esta página é exclusiva para os administradores!');
+        window.location.href='http://localhost//Havoc-City--Site----TCC/adm_page.php'
+    </script>";
+} else if (!isset($_SESSION['logged_adm'])) {
+}
+else {
+    header("Location: http://localhost//Havoc-City--Site----TCC/adm_page.php");
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 

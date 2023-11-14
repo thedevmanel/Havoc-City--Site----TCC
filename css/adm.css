@@ -55,8 +55,9 @@
 }
 
 .box-button-edit {
-  position: relative;
-  text-align: center;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
   padding-block: 0 5%;
 }
 
@@ -71,10 +72,87 @@
   font-family: arcadeclassic;
   cursor: pointer;
   transition: 0.2s ease;
+  border-radius: 5px;
 }
 
 .button-edit:hover {
   background: #f21;
   color: #fef;
   box-shadow: 0 0 5px #f21, 0 0 25px #f21, 0 0 50px #f21, 0 0 100px #f21;
+}
+
+.container-adm ul {
+  list-style: none;
+  margin-top: 3%;
+}
+
+.container-users {
+  width: 100%;
+  display: flex;
+  display: flex;
+  border-bottom: 2px solid #ccc;
+}
+
+.users-nickname-title {
+  width: 49%;
+  padding-block: 1%;
+  border-right: 2px solid #ccc;
+  font-family: arcadeclassic;
+  font-size: 30px;
+  margin-left: 1%;
+  color: #f21;
+}
+
+.users-points-time-title {
+  width: 19%;
+  padding-block: 1%;
+  border-right: 2px solid #ccc;
+  font-family: arcadeclassic;
+  font-size: 30px;
+  margin-left: 1%;
+  color: #f21;
+}
+
+.users-nickname {
+  width: 49%;
+  padding-block: 1%;
+  border-right: 2px solid #ccc;
+  font-family: arcadeclassic;
+  font-size: 30px;
+  margin-left: 1%;
+}
+
+.users-points-time {
+  width: 19%;
+  padding-block: 1%;
+  border-right: 2px solid #ccc;
+  font-family: arcadeclassic;
+  font-size: 30px;
+  margin-left: 1%;
+}
+
+.box-image-delete-users {
+  width: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.link-delete-adm {
+  width: 30%;
+}
+
+.image-trash {
+  width: 100%;
+  object-fit: cover;
+}
+
+ul li:last-child .container-users {
+  border-bottom: none;
+} 
+
+#delete-button {
+  border: none;
+  background: none;
+  cursor: pointer;
 }

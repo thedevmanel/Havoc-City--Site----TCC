@@ -2,10 +2,25 @@
 
 session_start();
 
+if (isset($_SESSION['logged_user'])) {
+    echo "<script>
+        alert('Esta página é restrita e apenas os administradores podem visualizar!');
+        window.location.href='http://localhost//Havoc-City--Site----TCC/index.php'
+    </script>";
+} else if (!isset($_SESSION['logged_adm'])) {
+    header("Location: http://localhost//Havoc-City--Site----TCC/adm_login.php");
+}
+
 if (isset($_GET['exit'])) {
     unset($_SESSION['logged_adm']);
     header("Location: http://localhost//Havoc-City--Site----TCC/index.php");
 }
+
+include "php/adm.php";
+
+include "php/time_records.php";
+
+include "php/pont_records.php";
 
 ?>
 
@@ -18,6 +33,7 @@ if (isset($_GET['exit'])) {
     <link rel="stylesheet" href="css/style.css" type="text/css" />
     <link rel="stylesheet" href="css/usuario.css" type="text/css">
     <link rel="stylesheet" href="css/adm.css" type="text/css">
+    <link rel="shortcut icon" href="Imagens/logo.png" type="image/x-icon" />
 </head>
 <body>
 <nav id="menu-h">
@@ -42,22 +58,29 @@ if (isset($_GET['exit'])) {
                 levantamento de dados
                 <div class="box-data-collection">
                     <div class="box-data-dc">
-                        <div class="data-fonts">Jogadores Registrados:</div><div class="data-fonts"> 17 </div>
+                        <div class="data-fonts">Jogadores Registrados:</div><div class="data-fonts"> <?php echo $num_user['total_linhas'] ?> </div>
                     </div>
                     <div class="box-data-dc">
-                        <div class="data-fonts">Dados de jogos Registrados:</div><div class="data-fonts"> 17 </div>
+                        <div class="data-fonts">Dados de jogos Registrados:</div><div class="data-fonts"> <?php echo $num_game['total_linhas'] ?> </div>
                     </div>
                     <div class="box-data-dc">
-                        <div class="data-fonts">Media de horas entre usuarios: </div><div class="data-fonts"> 00:09:20 </div>
+                        <div class="data-fonts">Media de horas entre usuarios: </div><div class="data-fonts"> <?php echo $avarage_hours['media_horas'] ?> </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <div class="box-button-edit">
-        <button class="button-edit">
-            editar
-        </button>
+        <a href="adm_gen.php">
+            <button class="button-edit">
+                editar
+            </button>
+        </a>
+        <a href="adm_page.php?exit=true">
+            <button class="button-edit">
+                sair
+            </button>
+        </a>
     </div>
         
     <div class="container-ranking">

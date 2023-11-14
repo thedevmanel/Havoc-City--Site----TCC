@@ -10,7 +10,7 @@ $senha = $_POST['senha'];
 // $senha = md5($senha);
 
 // if ($email == "adm@havoccity.com" && $senha == "HavocCity#2023") {
-if ($email == "12" && $senha == "34") {
+if ($email == "adm@havoccity.com" && $senha == "HavocCity#2023") {
     $_SESSION['logged_adm'] = $email;
     header("Location: http://localhost//Havoc-City--Site----TCC/adm_page.php");
 } else {
