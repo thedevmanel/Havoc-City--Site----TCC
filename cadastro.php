@@ -1,7 +1,12 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['logged_user'])) {
+if (isset($_SESSION['logged_adm'])) {
+  echo "<script>
+      alert('Efetue o logout do administrador para acessar esta página');
+      window.location.href='http://localhost//Havoc-City--Site----TCC/adm_page.php'
+  </script>";
+} else if (!isset($_SESSION['logged_user'])) {
 } else {
   $url = "http://localhost//Havoc-City--Site----TCC/usuario.php?id=" . urlencode($_SESSION['logged_user']);
 
@@ -54,7 +59,7 @@ if (!isset($_SESSION['logged_user'])) {
             <label for="nickname"> Nickname </label>
           </div>
           <div class="user-box">
-            <input type="text" name="email" id="email" required autocomplete="off" />
+            <input type="email" name="email" id="email" required autocomplete="off" />
             <label for="email"> Email </label>
           </div>
           <div class="user-box">

@@ -1,7 +1,12 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['logged_user'])) {
+if (isset($_SESSION['logged_adm'])) {
+    echo "<script>
+        alert('Esta não é a página de administração!');
+        window.location.href='http://localhost//Havoc-City--Site----TCC/adm_page.php'
+    </script>";
+} else if (!isset($_SESSION['logged_user'])) {
     header("Location: http://localhost//Havoc-City--Site----TCC/entrar.php");
 }
 

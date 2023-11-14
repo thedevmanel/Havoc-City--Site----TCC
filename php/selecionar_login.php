@@ -11,38 +11,46 @@ $senha = $_POST['senha'];
 
 $gatilho = false;
 
-$query_select = "SELECT * FROM `usuario` WHERE `email` = '$email' AND `senha` = '$senha'";
-$select = mysqli_query($conn, $query_select);
+if (isset($_SESSION['logged_adm'])) {
+    mysqli_close($conn);
 
-if (($select) && ($select->num_rows != 0)) {
-    while ($rows = mysqli_fetch_array($select)) {
-        $detect_email = $rows['email'];
-        $detect_senha = $rows['senha'];
+    echo "<script>
+        alert('Voce esta logado como administrador. Não será possivel realizar o login desse usuário');
+        window.location.href='http://localhost//Havoc-City--Site----TCC/adm_page.php'
+    </script>";
+} else {
 
-        if (($detect_email == $email) && ($detect_senha == $senha)) {
-            $gatilho = true;
-            $id = $rows['id_user'];
-            $_SESSION['logged_user'] = $id;
-            $nome = $rows['nome'];
-            $nickname = $rows['nickname'];
-        } else {
 
+    $query_select = "SELECT * FROM `usuario` WHERE `email` = '$email' AND `senha` = '$senha'";
+    $select = mysqli_query($conn, $query_select);
+
+    if (($select) && ($select->num_rows != 0)) {
+        while ($rows = mysqli_fetch_array($select)) {
+            $detect_email = $rows['email'];
+            $detect_senha = $rows['senha'];
+
+            if (($detect_email == $email) && ($detect_senha == $senha)) {
+                $gatilho = true;
+                $id = $rows['id_user'];
+                $_SESSION['logged_user'] = $id;
+                $nome = $rows['nome'];
+                $nickname = $rows['nickname'];
+            } else {
+            }
         }
     }
-}
-if ($gatilho ==  false) {
-    mysqli_close($conn);
+    if ($gatilho ==  false) {
+        mysqli_close($conn);
 
-    echo "<script language='javascript' type='text/javascript'>
+        echo "<script language='javascript' type='text/javascript'>
         alert('O login ou senha digitados está incorreto');
         window.location.href='http://localhost//Havoc-City--Site----TCC/entrar.php';
-    </script>";
+        </script>";
+    } else {
+        mysqli_close($conn);
 
-} else {
-    mysqli_close($conn);
-    
-    $url = "http://localhost//Havoc-City--Site----TCC/usuario.php?id=" . urlencode($_SESSION['logged_user']);
-    
-    header("Location: " . $url);
+        $url = "http://localhost//Havoc-City--Site----TCC/usuario.php?id=" . urlencode($_SESSION['logged_user']);
 
+        header("Location: " . $url);
+    }
 }
