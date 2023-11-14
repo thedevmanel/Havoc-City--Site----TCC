@@ -2,7 +2,12 @@
 
 session_start();
 
-if (!isset($_SESSION['logged_user'])) {
+if (isset($_SESSION['logged_adm'])) {
+    echo "<script>
+        alert('Voce esta logado como administrador. Efetue o logout para realizar o login');
+        window.location.href='http://localhost//Havoc-City--Site----TCC/adm_page.php'
+    </script>";
+} else if (!isset($_SESSION['logged_user'])) {
 }
 else {
     $url = "http://localhost//Havoc-City--Site----TCC/usuario.php?id=" . urlencode($_SESSION['logged_user']);

@@ -3,7 +3,7 @@ session_start();
 
 if (isset($_SESSION['logged_adm'])) {
   echo "<script>
-      alert('Efetue o logout do administrador para acessar esta página');
+      alert('Voce esta logado como administrador. Efetue o logout do administrador para realizar o cadastro');
       window.location.href='http://localhost//Havoc-City--Site----TCC/adm_page.php'
   </script>";
 } else if (!isset($_SESSION['logged_user'])) {
