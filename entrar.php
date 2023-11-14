@@ -47,7 +47,7 @@ else {
             <h2 class="titulo-formulario">LOGIN</h2>
             <form action="php/selecionar_login.php" method="post">
                 <div class="user-box">
-                    <input type="email" name="email" id="email" required autocomplete="off" />
+                    <input type="text" name="email" id="email" required autocomplete="off" />
                     <label for="email"> Email </label>
                 </div>
                 <div class="user-box">

@@ -48,7 +48,7 @@ $url = "http://localhost//Havoc-City--Site----TCC/usuario.php?id=" . urlencode($
             <label for="nome"> Nome </label>
           </div>
           <div class="user-box">
-            <input type="text" name="nickname" id="nickname" required autocomplete="off" value="<?php echo $nickname; ?>" />
+            <input type="text" name="nickname" id="nickname" required autocomplete="off" value="<?php echo $nickname; ?>" maxlength="10" />
             <label for="nickname"> Nickname </label>
           </div>
           <div class="user-box">
