@@ -167,7 +167,7 @@ $url = "http://localhost//Havoc-City--Site----TCC/usuario.php?id=" . $_SESSION['
         <div class="box-standard-rankings">
             <div class="box-first-place">
                 <div class="type-ranking"> Pontuacao </div>
-                <?php echo "$name_points_position[0]"; ?> tem o melhor tempo !!
+                <?php echo "$name_points_position[0]"; ?> tem a melhor pontuacao !!
 
                 <div class="records">
                     <?php echo "$pontuations_points_position[0]"; ?>
@@ -177,7 +177,7 @@ $url = "http://localhost//Havoc-City--Site----TCC/usuario.php?id=" . $_SESSION['
                 </div>
             </div>
             <div class="box-tops-player">
-                <span class="title-tops-players"> os 5 melhores tempos </span>
+                <span class="title-tops-players"> as 5 melhores pontuacoes </span>
 
                 <div class="list-players-ranking">
                     <div id="number-ranking">

@@ -66,9 +66,20 @@ else {
         ?>	
 		</ul>
 	</nav>
-	<span class="title-download"> Baixe o nosso jogo </span>
 
-	<a href="Imagens/aaa.png" download><button class="button-download"> BAIXAR JOGO </button></a>
+    <span class="title-download"> Baixe o nosso jogo </span>
+
+    <?php
+    if (isset($_SESSION['logged_user'])) {
+            echo '
+                <a href="Imagens/aaa.png" download><button id="button-download" class="button-download"> BAIXAR JOGO </button></a>
+            ';
+        } else {
+            echo '
+                <a><button id="button-download" class="button-download" onclick="mostrarMessage()"> BAIXAR JOGO </button></a>
+            ';
+        }
+    ?>
 
 	<span class="font-download"></span>
 
@@ -89,7 +100,12 @@ else {
         </div> -->
 	</div>
 
-
+    <script>
+        var buttonDownload = document.getElementById('button-download');
+        function mostrarMessage() {
+            alert('Faça o login para continuar o download!!')
+        }
+    </script>
 </body>
 
 </html>
