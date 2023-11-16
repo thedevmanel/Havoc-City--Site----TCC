@@ -70,9 +70,9 @@ else {
     <span class="title-download"> Baixe o nosso jogo </span>
 
     <?php
-    if (isset($_SESSION['logged_user'])) {
+    if ((isset($_SESSION['logged_user'])) || (isset($_SESSION['logged_adm']))) {
             echo '
-                <a href="Imagens/aaa.png" download><button id="button-download" class="button-download"> BAIXAR JOGO </button></a>
+                <a href="Jogo/Havoc City.zip" download><button id="button-download" class="button-download"> BAIXAR JOGO </button></a>
             ';
         } else {
             echo '

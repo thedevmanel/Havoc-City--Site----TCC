@@ -101,14 +101,15 @@ if (!isset($_SESSION['logged_adm'])) {
     </div>
     <div class="caixa-texto-1">
         <div class="conteudo-imagem-texto-1">
-            <img src="https://static.vecteezy.com/system/resources/previews/005/337/799/original/icon-image-not-found-free-vector.jpg" alt="" class="imagem-conteudo-1" />
+            <img src="https://1hitgames.com/wp-content/uploads/2020/08/ninja-gaiden-nes.png" alt="" class="imagem-conteudo-1" />
         </div>
         <p class="conteudo-texto-1">
-            Havoc city é um jogo plataforma em 2D com inspirações em jogos retrôs dos anos 80 e 90, com gráficos,
-            jogabilidades e sons inspirados nessas épocas.
+            Havoc city é um jogo plataforma em 2D com inspirações em jogos retrôs dos anos 80 e 90, com gráficos e
+            jogabilidades inspirados nessas épocas.
             Suas principais inspirações foram o Ninja Gaiden (NES), Teenage Mutant Ninja Turtles (NES), Castlevania
             (NES),
-            Mega Man (NES e SNES), The Legend of Zelda - A Link to the Past (SNES)...
+            Mega Man (NES e SNES), The Legend of Zelda - A Link to the Past (SNES). 
+            99% dos sprites do jogo são desenvolvidos pelos prórpios desenvolvedores, a exceção é o primeiro inimigo.
             <br /><br />
 
         </p>
@@ -120,7 +121,9 @@ if (!isset($_SESSION['logged_adm'])) {
     <div class="caixa-texto-1">
         <p class="conteudo-texto-1">
             Para jogar é muito simples, após a instalação do jogo em sua máquina, e, com a gameplay já iniciada, teremos
-            que movimentar o personagem [em desenvolvimento...]
+            que movimentar o personagem com "W", "A" e "D". Será possível realizar o ataque com o "K" e o seu especial com o "ESPAÇO".
+            O menu do jogo será controlado pelos botões "W", "A", "S" e "D", e para a confirmação o "ENTER".
+
             <br /><br />
 
         </p>
