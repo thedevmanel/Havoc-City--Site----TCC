@@ -1,0 +1,39 @@
+terminar o menu {
+	play game = FEITO
+	exit = FEITO
+}
+fazer o sistema de save {
+	salvando após terminar a fase = FEITO
+	carregando jogo = FEITO
+	"editando" save = FEITO
+	deletando save = FEITO
+}
+colocar o background {
+	
+}
+colocar mais 2 inimigos diferentes {
+	primeiro inimigo {
+		ataca = FEITO
+		movimentação = FEITO
+	}
+	segundo inimigo {
+		ataca
+		movimentação
+	}
+}
+arrumar a HUD {
+	nome player = FEITO
+	tempo = FEITO
+	pontos = FEITO
+	vidas = FEITO
+	vida atual = FEITO
+	mana = FEITO
+}
+
+rm_room0 com detalhes {
+
+}
+
+animação final {
+
+}
