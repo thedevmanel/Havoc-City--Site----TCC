@@ -1,29 +1,49 @@
 <?php
 session_start();
 
-if (isset($_SESSION['logged_adm'])) {
-    echo "<script>
-        alert('Esta não é a página de administração!');
-        window.location.href='http://localhost//Havoc-City--Site----TCC/adm_page.php'
-    </script>";
-} else if (!isset($_SESSION['logged_user'])) {
-    header("Location: http://localhost//Havoc-City--Site----TCC/entrar.php");
-}
-
 if (isset($_GET['exit'])) {
     unset($_SESSION['logged_user']);
-    header("Location: http://localhost//Havoc-City--Site----TCC/entrar.php");
+    header('Location: http://localhost:3000/entrar.php');
+}
+
+if (!isset($_SESSION['logged_user'])) {
+    header('Location: http://localhost:3000/entrar.php');
 }
 
 include "php/verificacao_id.php";
 
 include "php/time_records.php";
 
-include "php/pont_records.php";
+include "php/point_records.php";
 
-$url = "http://localhost//Havoc-City--Site----TCC/usuario.php?id=" . $_SESSION['logged_user'];
+// WAMPSERVER
+// $url = "http://localhost//Havoc-City--Site----TCC/usuario.php?id=" . $_SESSION['logged_user'];
 
-?>  
+
+// POSTGRESQL
+$url = "http://localhost:3000/usuario.php" . $_SESSION['logged_user'];
+
+for ($i = 0; $i < 5; $i++) {
+    if (isset($name_points_position[$i]) || isset($times_points_position[$i]) || isset($pontuations_points_position[$i])) {
+        // echo "a<br />";
+    } else {
+        $name_points_position[$i] = "";
+        $times_points_position[$i] = "";
+        $pontuations_points_position[$i] = "";
+        // echo "$name_points_position[$i], $times_points_position[$i], $pontuations_points_position[$i]";
+    }
+
+    if (isset($name_time_position[$i]) || isset($times_time_position[$i]) || isset($pontuations_time_position[$i])) {
+        // echo "a<br />";
+    } else {
+        $name_time_position[$i] = "";
+        $times_time_position[$i] = "";
+        $pontuations_time_position[$i] = "";
+        // echo "$name_time_position[$i], $times_time_position[$i], $pontuations_time_position[$i]";
+    }
+}
+
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -52,28 +72,30 @@ $url = "http://localhost//Havoc-City--Site----TCC/usuario.php?id=" . $_SESSION['
     </nav>
     <div class="container-user">
         <div class="container-descriptions">
-            <span class="title-user-info"> Seja bem vindo </span> <br />
+            <span class="title-user-info"> Seja bem-vindo </span> <br />
             <div class="line-title"></div>
             <div class="box-description-user">
                 <div class="info-description-user">
-                    <span class="font-information-title"> Nome: </span> <?php echo $nome; ?> <br />
+                    <!-- Campo de informação do usuario -->
+                    <span class="font-information-title"> Nome: </span> <?php echo $name; ?> <br />
                     <span class="font-information-title"> Nickname: </span> <?php echo $nickname; ?> <br />
                     <span class="font-information-title"> E-mail: </span> <?php echo $email; ?> <br />
 
                 </div>
+                <!-- Ação de salvar os dados do usuario -->
                 <div class="box-save-button">
                     <div class="info-save-button">
                         Caso quiser, você pode adicionar seus dados salvos em nossos banco de dados. Para isso, clique no
-                        botão abaixo e navegue até: <br /> <span class="file-path">C:\Users\"meu_usuario"\AppData\Local\Havoc_City </span>no explorador de arquivos.
+                        botão abaixo e navegue até: <br /> <span class="file-path"> C:\users\"user"\AppData\Local\Havoc_City </span>no explorador de arquivos.
                     </div>
                     <div class="button-save">
-
+                        <!-- Botao para pesquisar os dados -->
                         <input type="file" id="fileInput" accept=".sav" />
                         <div id="numericValues"></div>
 
-                        <!-- Campos de entrada existentes -->
+                        <!-- Campos de cada local de save -->
                         <form action="php/save_data.php" method="post">
-                            <input type="text" name="id_user" id="id_user" value="<?php echo "$id"; ?>" hidden />
+                            <input type="text" name="id_user" id="id_user" value="<?php echo "$id_user"; ?>" hidden />
                             <input type="text" name="seconds" id="seconds" name="seconds" readonly hidden />
                             <input type="text" name="minutes" id="minutes" name="minutes" readonly hidden />
                             <input type="text" name="hours" id="hours" name="hours" readonly hidden />
@@ -90,32 +112,26 @@ $url = "http://localhost//Havoc-City--Site----TCC/usuario.php?id=" . $_SESSION['
 
             </div>
             <div class="buttons-user-page">
-                <form action="edit.php" method="GET">
-                    <input type="text" name="id" id="id" hidden value="<?php echo $id; ?>" />
+                <button class="button-choose-user" id="btn-edit" onclick="showMessageAlert('btnEdit')"> editar </button>
 
-                    <input type="submit" value="Editar" class="button-choose-user" />
+                <form id="formInputEdit" action="edit.php" method="POST">
+                    <input type="text" name="id" id="id" hidden value="<?php echo $id_user; ?>" />
+                    <input type="hidden" name="inputEditUser" id="inputEditUser" />
+
                 </form>
 
-                <a href="http://localhost//Havoc-City--Site----TCC/usuario.php?exit=true"><button class="button-choose-user"> sair </button></a>
+                <a href="http://localhost:3000/usuario.php?exit=true"><button class="button-choose-user"> sair </button></a>
 
-                <div class="box-button-delete">
-                    <button class="button-choose-user" id="button-delete" onclick="showMessage()"> delete </button>
-
-                    <div id="box-info-delete">
-                        Deseja deletar o usuário?
-                        <form action="php/delete_user.php" method="GET">
-                            <input type="text" name="id" id="id" hidden value="<?php echo $id; ?>" />
-
-                            <input type="submit" id="delete" value="Sim" class="button-delete-accept" />
-                        </form>
-                        <button id="cancel" class="button-delete-accept" onclick="hideMessage()"> Não </button>
-                    </div>
-
-
-                </div>
+                <form id="formInputDelete" action="php/delete_user.php" method="POST">
+                    <input type="text" name="id" id="id" hidden value="<?php echo $id_user; ?>" />
+                    <input type="hidden" name="inputDeleteUser" id="inputDeleteUser" />
+                    
+                </form>
+                <button class="button-choose-user" id="btn-delete" onclick="showMessageAlert('btnDelete')"> desativar </button>
             </div>
         </div>
     </div>
+    <!-- PLACARES DE LÍDERES -->
     <div class="container-ranking">
         <span class="title-raking"> rankings </span> <br />
         <div class="line-title"></div>
@@ -211,51 +227,29 @@ $url = "http://localhost//Havoc-City--Site----TCC/usuario.php?id=" . $_SESSION['
     </div>
     <div class="footer">
         <div class="info-footer">
-            ™ & ©2023 Havoc City. Todos os direitos reservados. Havoc City, Emanuel Rabello, Gustavo Azevedo, <br>Pedro
-            Ogata, Filipe Grande sao os desenvolvedores
+            ™ & ©2024 Havoc City. Todos os direitos reservados. Havoc City, Emanuel Rabello
         </div>
     </div>
 
-    <script src="js/aparecerDelete.js"></script>
-    <script>
-        /* Aperecer opção de  baixar arquivo de save*/
-        document.addEventListener("DOMContentLoaded", function() {
-            const fileInput = document.getElementById("fileInput");
-            const confirmationDiv = document.getElementById("confirmationDiv");
-
-            fileInput.addEventListener("change", function(event) {
-                const selectedFile = event.target.files[0];
-
-                if (selectedFile) {
-                    const reader = new FileReader();
-
-                    reader.onload = function(e) {
-                        const fileText = e.target.result;
-
-                        const regex =
-                            /(?:seconds|minutes|hours|pontuation)="(\d+\.\d+)"/g;
-                        let match;
-
-                        while ((match = regex.exec(fileText)) !== null) {
-                            const fieldName = match[0].split("=")[0];
-                            const value = match[1];
-
-                            // Preencha os campos de entrada existentes com os valores extraídos
-                            const inputField = document.getElementById(fieldName);
-                            if (inputField) {
-                                inputField.value = value;
-                            }
-                        }
-
-                        // Mostrar o botão de confirmação após a leitura do arquivo
-                        confirmationDiv.style.display = "block";
-                    };
-
-                    reader.readAsText(selectedFile);
-                }
-            });
-        });
-    </script>
+    <script src="js/scriptUsuário.js"></script>
+    <script src="js/sweetAlert.js"></script>
+    <?php
+    if (isset($_SESSION['pass_error'])) {
+        echo '<script>
+                Swal.fire({
+                    icon: "error",
+                    title: "A senha está incorreta",
+                    showConfirmButton: true,
+                    customClass: {
+                        title: "custom-title-forms",
+                        popup: "custom-popup-forms",
+                        confirmButton: "custom-button-error-pass"     
+                    }
+                });    
+            </script>';
+    }
+    unset($_SESSION['pass_error']);
+    ?>
 </body>
 
 </html>

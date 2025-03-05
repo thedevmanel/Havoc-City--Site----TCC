@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Roboto&family=Roboto+Mono:wght@600&display=swap");
-
 html {
   scroll-behavior: smooth;
 }
@@ -8,7 +6,6 @@ html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: roboto;
 }
 
 body {
@@ -26,12 +23,12 @@ body {
   width: 20%;
 }
 
-.content-homepage {
-  width: 100;
-}
-
 .logo-header {
   width: 150px;
+}
+
+#menu-cell {
+  display: none;
 }
 
 #menu-h {
@@ -43,6 +40,7 @@ body {
   justify-content: right;
   text-transform: uppercase;
   font-size: 13px;
+  z-index: 999;
 }
 #menu-h ul {
   list-style: none;
@@ -112,61 +110,6 @@ body {
   text-shadow: 0 0 5px #fef, 0 0 10px #fef, 0 0 20px #fef, 0 0 40px #fef;
 }
 
-/* h1 {
-  width: 100vw;
-  height: 10vw;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  color: white;
-}
-p {
-  font-size: 25px;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-}
-
-img {
-  align-items: center;
-  display: flex;
-  height: auto;
-  flex-direction: row;
-  margin-top: 40px;
-} */
-.text {
-  font-size: 15px;
-  text-align: center;
-}
-.text2 {
-  font-size: 15px;
-  text-align: center;
-}
-.text3 {
-  font-size: 10px;
-  text-align: center;
-  color: white;
-}
-
-/* td,
-th {
-  padding: 0.5em;
-  margin: 0;
-  text-align: center;
-}
-
-td {
-  font-weight: bold;
-}
-table {
-  width: 100%;
-  margin-bottom: 0.5em;
-  table-layout: fixed;
-  text-align: center;
-} */
-
 .footer {
   width: 100%;
   padding-block: 5%;
@@ -191,4 +134,36 @@ table {
   box-shadow: 0 0 2px #fef, 0 0 50px #fef, 0 0 10px #fef, 0 0 20px #fef;
   background: #fef;
   border-radius: 30px;
+}
+
+@media (max-width: 599px), (max-aspect-ratio: 1/1) {
+  html {
+    width: auto;
+  }
+  #menu-h ul li a {
+    /* display: none; */
+    width: 18vh;
+    font-size: 13px;
+    justify-content: center;
+  }
+  #menu-cell {
+    display: flex !important;
+    position: fixed;
+    top: 1%;
+    left: 1%;
+    width: 5%;
+  }
+  #menu-h {
+    display: none;
+  }
+  .logo-header {
+    display: none;
+  }
+  .button-admin {
+    display: none;
+  }
+  .info-footer {
+    width: 95%;
+    font-size: 18px;
+  }
 }

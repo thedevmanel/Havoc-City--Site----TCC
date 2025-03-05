@@ -1,10 +1,19 @@
 <?php
 
-$id = $_GET['id'];
+session_start();
+
+if (!isset($_SESSION['logged_user'])) {
+  header('Location: http://localhost:3000/entrar.php');
+}
+
+if (isset($_SESSION['logged_adm'])) {
+  header('Location: http://localhost:3000/index.php');
+}
 
 include "php/verificacao_id.php";
+include "php/select_edit.php";
 
-$url = "http://localhost//Havoc-City--Site----TCC/usuario.php?id=" . urlencode($id);
+$url = "http://localhost:3000/usuario.php?id=" . urlencode($id_user);
 
 ?>
 
@@ -40,12 +49,12 @@ $url = "http://localhost//Havoc-City--Site----TCC/usuario.php?id=" . urlencode($
     </div>
     <div class="formulario-box">
       <h2 class="titulo-formulario">Editar</h2>
-      <form action="php/update_date_user.php" method="get">
-        <input type="text" name="id" id="id" hidden value="<?php echo $id; ?>">
+      <form action="php/forms_data_user.php" method="post">
+        <input type="text" name="id_user" id="id_user" hidden value="<?php echo $id_user; ?>">
         <div class="user-box">
           <div class="user-box">
-            <input type="text" name="nome" id="nome" required autocomplete="off" value="<?php echo $nome; ?>" />
-            <label for="nome"> Nome </label>
+            <input type="text" name="name" id="name" required autocomplete="off" value="<?php echo $name; ?>" />
+            <label for="name"> Nome </label>
           </div>
           <div class="user-box">
             <input type="text" name="nickname" id="nickname" required autocomplete="off" value="<?php echo $nickname; ?>" maxlength="10" />
@@ -56,22 +65,22 @@ $url = "http://localhost//Havoc-City--Site----TCC/usuario.php?id=" . urlencode($
             <label for="email"> Email </label>
           </div>
           <div class="user-box">
-            <input type="password" name="senha" id="senha" required autocomplete="off" value="<?php echo $senha; ?>" />
-            <label for="senha"> Senha </label>
+            <input type="password" name="password" id="password" required autocomplete="off" value="" />
+            <label for="password"> Senha </label>
             <span>
-              <input type="checkbox" name="mostrar-senha" onclick="showPassword()" id="mostrar-senha" class="caixa-mostrar-senha" />
+              <img src="Imagens/hide_pass.png" alt="hide-password" class="image-show-hide-pass" onclick="showPassword()" id="show-password" />
             </span>
           </div>
           <p class="texto-link-para-cadastro">
             mudou de ideia?
-            <a href="<?php echo $url; ?>" class="link-cadastro"> cancelar </a>
+            <a href="<?php echo $url; ?>" class="link-forms"> cancelar </a>
           </p>
-          <button type="submit">
+          <button type="submit" class="button-submit" name="btn-submit" value="edit-user">
             <span></span>
             <span></span>
             <span></span>
             <span></span>
-            Editar
+            editar
           </button>
           <br />
           <br />

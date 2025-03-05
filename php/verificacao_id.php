@@ -2,23 +2,26 @@
 
 include "conexao.php";
 
-$id = $_GET['id'];
+$id_user = $_SESSION['logged_user'];
 
-$query_select = "SELECT * FROM `usuario` WHERE `id_user` = '$id'";
-$select = mysqli_query($conn, $query_select);
+try {
+    $select = $conn->verifyIdUser($id_user);
 
-if (($select) && ($select->num_rows != 0)) {
-    while ($rows = mysqli_fetch_array($select)) {
-        $detect_id = $rows['id_user'];
+    if (($select) && ($select->rowCount() != 0)) {
+        while ($rows = $select->fetch(PDO::FETCH_ASSOC)) {
+            $detect_id_user = $rows['id_user'];
 
-        if ($detect_id ==  $id) {
-            $nome = $rows['nome'];
-            $nickname = $rows['nickname'];
-            $email = $rows['email'];
-            $senha = $rows['senha'];
-        }else {
+            if ($detect_id_user == $id_user) {  
+                $name = $rows['name'];
+                $nickname = $rows['nickname'];
+                $email = $rows['email'];
+            }
         }
+    } else {
+        echo "<script>
+            window.location.href='http://localhost:3000/entrar.php';
+        </script>";
     }
+} catch (PDOException $e) {
+    echo "Erro ao localizar a conta!! -> " . die($e->getMessage());
 }
-
-mysqli_close($conn);

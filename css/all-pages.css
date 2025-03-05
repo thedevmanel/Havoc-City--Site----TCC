@@ -1,0 +1,86 @@
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: rainyhearts;
+}
+
+body {
+  background: #fef;
+  color: #000;
+}
+
+#menu-h {
+  position: fixed;
+  top: 0%;
+  background: transparent;
+  width: 100%;
+  display: flex;
+  justify-content: right;
+  text-transform: uppercase;
+  font-size: 13px;
+  z-index: 999;
+}
+#menu-h ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#menu-h ul li a {
+  width: 120px;
+  height: 35px;
+  display: grid;
+  place-items: center;
+  transition: 0.2s;
+  color: #fef;
+  text-decoration: none;
+  font-family: arcadeclassic;
+  font-size: 15px;
+}
+
+#menu-h ul li a:hover {
+  background-color: #f21;
+  text-shadow: 0 0 5px #fef, 0 0 10px #fef, 0 0 20px #fef, 0 0 40px #fef;
+}
+
+#menu-h ul li:last-child a {
+  background-color: #f21;
+  justify-self: flex-end;
+}
+
+.botoes-navbar {
+  display: flex;
+  padding-left: 20%;
+}
+
+.footer {
+  width: 100%;
+  padding-block: 5%;
+  background: #fef;
+  display: flex;
+  justify-content: space-around;
+  color: #111;
+}
+
+.info-footer {
+  text-align: center;
+  font-size: 15px;
+  font-family: arcadeclassic;
+}
+
+.icones-footer {
+  width: 15%;
+  transition: all 0.2s ease;
+}
+
+.icones-footer:hover {
+  box-shadow: 0 0 2px #fef, 0 0 50px #fef, 0 0 10px #fef, 0 0 20px #fef;
+  background: #fef;
+  border-radius: 30px;
+}

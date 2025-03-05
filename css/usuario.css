@@ -39,6 +39,8 @@
 .info-description-user {
   font-size: 15px;
   width: 30%;
+  font-family: "rainyhearts";
+  font-size: 18px;
 }
 
 .font-information-title {
@@ -58,6 +60,8 @@
 
 .file-path {
   color: #f21;
+  font-family: "rainyhearts";
+  font-size: 16px;
 }
 
 .button-save {
@@ -75,7 +79,7 @@ input[type="file"]::-webkit-file-upload-button {
 
 input[type="file"]::before {
   content: "Carregar Save";
-  padding: 10px 59px;
+  padding: 10px 45px;
   background: #f21; 
   color: #fef;
   display: inline-block;
@@ -101,6 +105,8 @@ input[type="file"]::after {
   display: none;
   margin-top: 10%;
   color: #000;
+  font-family: rainyhearts;
+  font-size: 16px;
 }
 
 .button-submit-save {
@@ -127,6 +133,8 @@ input[type="file"]::after {
 
 .info-save-button {
   color: #000;
+  font-family: "rainyhearts";
+  font-size: 18px;
 }
 
 .buttons-user-page {
@@ -156,28 +164,21 @@ input[type="file"]::after {
   box-shadow: 0 0 5px #f21, 0 0 25px #f21, 0 0 50px #f21, 0 0 100px #f21;
 }
 
-#box-info-delete {
-  margin-top: 25px;
-  text-align: center;
-  display: none;
+.input-container-delete {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.button-delete-accept {
-  width: 50px;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  background: none;
-  margin-top: 10px;
-  text-transform: uppercase;
-  color: #f21;
+.show-password-delete {
+  position: absolute;
+  top: 60%;
+  right: 10px;
+  transform: translateY(-50%);
   cursor: pointer;
-  transition: 0.2s ease;
-}
-
-.button-delete-accept:hover {
-  color: #000;
-  background-color: none;
+  width: 7%;
 }
 
 .container-ranking {
@@ -267,15 +268,169 @@ input[type="file"]::after {
 }
 
 .nome-ranking {
-  width: 30%;
+  width: 40%;
   font-family: arcadeclassic;
   color: #fef;
   font-size: 25px;
+  display: flex;
+  align-items: center;
 }
 
 .info-ranking {
-  width: 7%;
+  width: 15%;
   font-family: arcadeclassic;
   color: #fef;
   font-size: 25px;
+  display: flex;
+  align-items: center;
+}
+
+.title-desative-account {
+  font-family: rainyhearts; 
+  font-size: 25px; 
+  color: #f21; 
+  font-weight: normal !important;
+  text-transform: uppercase;
+}
+
+.text-desative-account {
+  font-family: rainyhearts; 
+  font-size: 18px; 
+  color: #000; 
+  font-weight: normal;
+}
+
+.swal2-input {
+  font-family: rainyhearts;
+  font-size: 18px;
+  padding-block: 5%;
+  height: 10px !important;
+  padding: 20px 5px 20px 5px !important;
+  width: 70%;
+  border: none;
+  border-bottom: solid 2px #000;
+  box-shadow: none;
+  transition: ease 0.3s;
+  color: #000;
+}
+.swal2-input:focus {
+  box-shadow: none;
+  border: none;
+  border-bottom: solid 2px #f21;
+}
+
+.desative-account-confirm-btn, .desative-account-cancel-btn{
+  width: 100px;
+  background: #000 !important;
+  box-shadow: none !important;
+  font-family: arcadeclassic;
+  font-size: 15px !important;
+  padding-block: 7px;
+  transition: ease .2s;
+}
+
+.desative-account-confirm-btn:hover, .desative-account-cancel-btn:hover {
+  background: #f21 !important;
+}
+
+.message-validate-desative-account {
+  font-family: rainyhearts;
+  background: none;
+}
+
+.custom-popup-forms {
+  background-color: #fef !important;
+  border-radius: 10px;
+  padding-block: 8px 15px !important;
+  /* display: flex !important; */
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.custom-title-forms {
+  font-family: rainyhearts !important; 
+  font-size: 20px; 
+  color: #000; 
+  font-weight: normal !important;
+}
+
+.custom-button-error-pass {
+  width: 80px;
+  background: #000 !important;
+  box-shadow: none !important;
+  font-family: arcadeclassic;
+  font-size: 18px !important;
+  padding-block: 7px;
+  transition: ease .2s ;
+}
+
+.custom-button-error-pass:hover {
+  background: #f21 !important;
+  box-shadow: 0 0 5px #f21, 0 0 25px #f21, 0 0 50px #f21 !important;
+}
+
+@media (max-width: 599px), (max-aspect-ratio: 1/1) {
+.container-descriptions {
+  width: 80%;
+}
+
+.title-user-info {
+  margin-top: 15%;
+}
+
+.line-title {
+  width: 100%;
+  margin: 0;
+}
+
+.box-description-user {
+  display: block;
+}
+
+.info-description-user {
+  width: 100%;
+  padding-block: 5%;
+  font-size: 20px;
+}
+
+.box-save-button {
+  width: 100%;
+  padding-block: 5%;
+  font-size: 20px;
+}
+
+.button-choose-user {
+  width: 100px;
+}
+
+input[type="file"]::before {
+  margin-top: 15%;
+}
+
+.box-standard-rankings {
+  display: block;
+}
+
+.box-first-place {
+  width: 100%;
+}
+
+.box-tops-player {
+  width: 100%;
+}
+
+.title-tops-players {
+  font-size: 25px;
+}
+
+.nome-ranking {
+  width: 50%;
+  font-size: 20px;
+}
+
+.info-ranking {
+  font-size: 20px;
+width: 15%;
+}
+
 }

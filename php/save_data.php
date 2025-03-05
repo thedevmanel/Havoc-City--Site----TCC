@@ -15,20 +15,12 @@ $pontuation = $_POST['pontuation'];
 $pontuation = ($pontuation / 1000000) * 1000000;
 $id_user = $_POST['id_user'];
 
-$insert = "INSERT INTO `jogo` VALUES (DEFAULT,'$id_user','$time','$pontuation')";
+echo $id_user . "<br />";
 
-echo $id_user . "<br />" . $time . "<br />" . $pontuation . "<br />";
+try {
+    $conn->saveGame($time, $pontuation, $id_user);
 
-if (mysqli_query($conn, $insert)) {
-} else {
-    echo "erro" . $insert, "<br>" . mysqli_error($conn);
+} catch (PDOException $e) {
+    echo "Erro ao inserir dados do jogo". die($e->getMessage());
+
 }
-
-mysqli_close($conn);
-
-$url = "http://localhost//Havoc-City--Site----TCC/usuario.php?id=" . urlencode($_SESSION['logged_user']);
-
-echo "<script>
-    alert('As estatíticas do seu jogo foram salvas devidamente!!');
-    window.location.href='$url';
-</script>"; 

@@ -1,12 +1,17 @@
 <?php
 
+include "php/controller.php";
+
+$web = new webSite();
+
 session_start();
 
-if (!isset($_SESSION['logged_user'])) {
-}
-else {
-    $url = "http://localhost//Havoc-City--Site----TCC/usuario.php?id=" . urlencode($_SESSION['logged_user']);
-}
+$login_user_status = isset($_SESSION['logged_user']);
+$login_adm_status = isset($_SESSION['logged_adm']);
+
+$url = $login_user_status ? "http://localhost:3000/usuario.php?id=" . urlencode($login_user_status) : "";
+
+$is_logged = isset($_SESSION['logged_user']) || isset($_SESSION['logged_adm']);
 
 ?>
 
@@ -14,96 +19,61 @@ else {
 <html lang="pt-br">
 
 <head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Download Havoc City</title>
-	<link rel="stylesheet" href="css/style.css" type="text/css" />
-	<link rel="stylesheet" href="css/download.css" type="text/css" />
-	<link rel="shortcut icon" href="Imagens/logo.png" type="image/x-icon" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Download Havoc City</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <link rel="stylesheet" href="css/download.css" type="text/css" />
+    <link rel="shortcut icon" href="Imagens/logo.png" type="image/x-icon" />
 </head>
 
 <body>
-	<div class="img-conteiner-download">
+    <div class="conteiner-download">
+        <div class="message-download-for-cell">
+            aaaaaaa
+        </div>
 
-	</div>
-	<nav id="menu-h">
-		<div class="logo-jogo-header">
-			<img src="https://fontmeme.com/permalink/231027/599d6f4224ce722a5f04605e3e9d1db4.png" class="logo-header" />
-		</div>
+        <nav id="menu-h">
+            <div class="logo-jogo-header">
+                <img src="https://fontmeme.com/permalink/231027/599d6f4224ce722a5f04605e3e9d1db4.png" class="logo-header" />
+            </div>
+            <ul>
+                <li><a href="index.php">Home </a></li>
 
-		<ul>
-			<li><a href="index.php">Home </a></li>
+                <li><a href="Download.php">Download</a></li>
 
-			<li><a href="Download.php">Download</a></li>
+                <?php $web->loginStatus($login_user_status, $login_adm_status, $url); ?>
+        </nav>
 
-			<?php
-                if (!isset($_SESSION['logged_user']) && !isset($_SESSION['logged_adm'])) {
-                    echo '
-                        <li><a href="entrar.php">iniciar sessao</a></li>
-                        ';
-                } else if (isset($_SESSION['logged_adm'])) {
-                    echo '
-                        <li><a href="http://localhost//Havoc-City--Site----TCC/adm_page.php">admin</a></li>
-                        ';
-                } else {
-                    echo '
-                        <li><a href="' . $url . '"> perfil </a></li>
-                        ';
-                }
-                ?>
-            </ul>
-        </ul>
-        <?php
-        if (!isset($_SESSION['logged_adm']) && !isset($_SESSION['logged_user'])) {
-            echo '
-                <a href="http://localhost//Havoc-City--Site----TCC/adm_login.php" class="link-adm">
-                    <button class=button-admin>
-                        admin
-                    </button>
-                </a>
-            ';
-        }
-        ?>	
-		</ul>
-	</nav>
+        <span class="title-download"> Baixe o nosso jogo </span>
 
-    <span class="title-download"> Baixe o nosso jogo </span>
+        <div id="box-message-download">
 
-    <?php
-    if ((isset($_SESSION['logged_user'])) || (isset($_SESSION['logged_adm']))) {
-            echo '
-                <a href="Jogo/Havoc City.zip" download><button id="button-download" class="button-download"> BAIXAR JOGO </button></a>
-            ';
-        } else {
-            echo '
-                <a><button id="button-download" class="button-download" onclick="mostrarMessage()"> BAIXAR JOGO </button></a>
-            ';
-        }
-    ?>
+        </div>
 
-	<span class="font-download"></span>
+        <?php echo $is_logged ? '<a href="Jogo/Havoc City.exe">' : ''; ?>
+        <button id="button-download" class="button-download" <?php echo $is_logged ? '' : 'onclick="messageAlert()"'; ?>>
+            BAIXAR JOGO
+        </button>
+        <?php echo $is_logged ? '</a>' : ''; ?>
 
-	<div class="footer">
-		<div class="info-footer">
-			™ & ©2023 Havoc City. Todos os direitos reservados. Havoc City, Emanuel Rabello, Gustavo Azevedo, <br>Pedro
-			Ogata, Filipe Grande sao os desenvolvedores
-		</div>
-		<!-- <div class="icons-footer">
-            <span class="box-icones-footer">
-                <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"><img
-                        src="Imagens/insta.svg" class="icones-footer" alt="Imagem SVG" /></a>
-                <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"><img
-                        src="Imagens/facebook.svg" class="icones-footer" alt="Imagem SVG" /></a>
-                <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer"><img
-                        src="Imagens/twitter.svg" class="icones-footer" alt="Imagem SVG" /></a>
-            </span>
-        </div> -->
-	</div>
+        <span class="font-download"></span>
 
+        <div class="footer">
+            <div class="info-footer">
+                ™ & ©2024 Havoc City. Todos os direitos reservados. Havoc City, Emanuel Rabello
+            </div>
+        </div>
+    </div>
+
+    <script src="js/sweetAlert.js"></script>
+    <script src="js/scriptDownload.js"></script>
     <script>
-        var buttonDownload = document.getElementById('button-download');
-        function mostrarMessage() {
-            alert('Faça o login para continuar o download!!')
+        function messageAlert() {
+            window.location.href = 'http://localhost:3000/cadastro.php';
+            <?php
+            $_SESSION['no_logged'] = true;
+            ?>
         }
     </script>
 </body>

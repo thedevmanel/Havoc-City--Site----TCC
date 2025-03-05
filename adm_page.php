@@ -5,22 +5,22 @@ session_start();
 if (isset($_SESSION['logged_user'])) {
     echo "<script>
         alert('Esta página é restrita e apenas os administradores podem visualizar!');
-        window.location.href='http://localhost//Havoc-City--Site----TCC/index.php'
+        window.location.href='http://localhost:3000/index.php'
     </script>";
 } else if (!isset($_SESSION['logged_adm'])) {
-    header("Location: http://localhost//Havoc-City--Site----TCC/adm_login.php");
+    header("Location: http://localhost:3000/adm_login.php");
 }
 
 if (isset($_GET['exit'])) {
     unset($_SESSION['logged_adm']);
-    header("Location: http://localhost//Havoc-City--Site----TCC/index.php");
+    header("Location:http://localhost:3000/index.php");
 }
 
 include "php/adm.php";
 
 include "php/time_records.php";
 
-include "php/pont_records.php";
+include "php/point_records.php";
 
 ?>
 
@@ -58,13 +58,22 @@ include "php/pont_records.php";
                 levantamento de dados
                 <div class="box-data-collection">
                     <div class="box-data-dc">
-                        <div class="data-fonts">Jogadores Registrados:</div><div class="data-fonts"> <?php echo $num_user['total_linhas'] ?> </div>
+                        <!-- WAMPSERVER
+                        <div class="data-fonts">Jogadores Registrados:</div><div class="data-fonts"> <?php echo $num_user['total_linhas'] ?> </div> -->
+                        <!-- POSTGRESQL -->
+                        <div class="data-fonts">Jogadores Registrados:</div><div class="data-fonts"> <?php echo $num_users['number_line'] ?> </div> 
                     </div>
                     <div class="box-data-dc">
-                        <div class="data-fonts">Dados de jogos Registrados:</div><div class="data-fonts"> <?php echo $num_game['total_linhas'] ?> </div>
+                        <!-- WAMPSERVER
+                        <div class="data-fonts">Dados de jogos Registrados:</div><div class="data-fonts"> <?php echo $num_game['total_linhas'] ?> </div> -->
+                        <!-- POSTGRESQL -->
+                        <div class="data-fonts">Dados de jogos Registrados:</div><div class="data-fonts"> <?php echo $num_game['number_line'] ?> </div>
                     </div>
                     <div class="box-data-dc">
-                        <div class="data-fonts">Media de horas entre usuarios: </div><div class="data-fonts"> <?php echo $avarage_hours['media_horas'] ?> </div>
+                        <!-- WAMPSERVER
+                        <div class="data-fonts">Media de horas entre usuarios: </div><div class="data-fonts"> <?php echo $avarage_hours['media_horas'] ?> </div> -->
+                        <!-- POSTGRESQL -->
+                        <div class="data-fonts">Media de horas entre usuarios: </div><div class="data-fonts"> <?php echo $avg_hours['avg_hours'] ?> </div>
                     </div>
                 </div>
             </div>
@@ -180,8 +189,7 @@ include "php/pont_records.php";
 
     <div class="footer">
         <div class="info-footer">
-            ™ & ©2023 Havoc City. Todos os direitos reservados. Havoc City, Emanuel Rabello, Gustavo Azevedo, <br>Pedro
-            Ogata, Filipe Grande sao os desenvolvedores
+        ™ & ©2024 Havoc City. Todos os direitos reservados. Havoc City, Emanuel Rabello
         </div>
     </div>
 </body>

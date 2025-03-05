@@ -1,3 +1,5 @@
+@import url(pages-php.css);
+
 #menu-h{
   background: transparent;
 }
@@ -91,13 +93,14 @@
 .formulario-box .user-box input[type="text"], input[type="password"] {
   width: 100%;
   padding: 10px 0;
-  font-size: 16px;
+  font-size: 20px;
   color: #000;
   margin-bottom: 10%;
   border: none;
   border-bottom: 1px solid #000;
   outline: none;
   background: transparent;
+  font-family: rainyhearts;
 }
 
 .formulario-box .user-box label {
@@ -112,7 +115,24 @@
   font-family: arcadeclassic;
 }
 
-#mostrar-senha {
+#show-password {
+  all: unset;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: 0.2s ease;
+  top: 20%;
+  right: 0;
+}
+
+.image-show-hide-pass {
+  width: 100%;
+}
+
+/* #mostrar-senha {
   all: unset;
   position: absolute;
   border: 1px solid #000;
@@ -147,7 +167,7 @@
   border-radius: 2px;
   box-shadow: 0 0 5px #f21, 0 0 10px #f21, 0 0 20px #f21, 0 0 40px #f21;
   border: 1px solid #f21;
-}
+} */
 
 .formulario-box .user-box input[type="text"]:focus + label,
 .formulario-box .user-box input[type="text"]:valid + label, 
@@ -165,30 +185,47 @@ input[type="password"]:valid + label {
 
 .texto-link-para-cadastro {
   color: #000;
-  font-family: arcadeclassic;
+  font-family: rainyhearts;
   font-size: 15px;
+  font-weight: bold;
 }
 
-.link-cadastro {
+.link-forms {
   color: #f21;
   text-decoration: none;
   margin-left: 5px;
   transition: 0.2s ease;
   font-family: arcadeclassic;
+  font-weight: normal;
+  border: none;
+  
 }
 
-.link-cadastro:visited {
+.link-forms:visited {
   color: #f21;
   text-decoration: none;
   margin-left: 5px;
   transition: 0.2s ease;
 }
 
-.link-cadastro:hover {
+.link-forms:hover {
   text-shadow: 0 0 5px #f21, 0 0 10px #f21, 0 0 20px #f21, 0 0 40px #f21;
 }
 
-.formulario-box form button {
+.forget-pass-box {
+  display: flex;
+  justify-content: center;
+  font-size: 15px;
+  margin: 10px;
+}
+
+button.link-forms {
+  font-size: 15px;
+  border: none;
+  cursor: pointer;
+}
+
+.formulario-box form .button-submit {
   position: relative;
   display: inline-block;
   width: 100%;
@@ -207,19 +244,19 @@ input[type="password"]:valid + label {
   font-family: arcadeclassic;
 }
 
-.formulario-box button:hover {
+.formulario-box .button-submit:hover {
   background: #f21;
   color: #fef;
   border-radius: 5px;
   box-shadow: 0 0 5px #f21, 0 0 25px #f21, 0 0 50px #f21, 0 0 100px #f21;
 }
 
-.formulario-box button span {
+.formulario-box .button-submit span {
   position: absolute;
   display: block;
 }
 
-.formulario-box button span:nth-child(1) {
+.formulario-box .button-submit span:nth-child(1) {
   top: 0;
   left: -100%;
   width: 100%;
@@ -238,7 +275,7 @@ input[type="password"]:valid + label {
   }
 }
 
-.formulario-box button span:nth-child(2) {
+.formulario-box .button-submit span:nth-child(2) {
   top: -100%;
   right: 0;
   width: 2px;
@@ -258,7 +295,7 @@ input[type="password"]:valid + label {
   }
 }
 
-.formulario-box button span:nth-child(3) {
+.formulario-box .button-submit span:nth-child(3) {
   bottom: 0;
   right: -100%;
   width: 100%;
@@ -278,7 +315,7 @@ input[type="password"]:valid + label {
   }
 }
 
-.formulario-box button span:nth-child(4) {
+.formulario-box .button-submit span:nth-child(4) {
   bottom: -100%;
   left: 0;
   width: 2px;
@@ -316,4 +353,125 @@ input[type="password"]:valid + label {
 
 .button-edicao:hover {
   text-shadow: 0 0 5px #fef, 0 0 10px #fef, 0 0 20px #fef, 0 0 40px #fef;
+}
+
+.custom-popup-forms {
+  background-color: #fef !important;
+  border-radius: 10px;
+  padding-block: 8px 15px !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.custom-title-forms {
+  font-family: rainyhearts; 
+  font-size: 15px; 
+  color: #000; 
+  font-weight: normal !important;
+}
+
+.image-fail-popup {
+  width: 70%;
+}
+
+.title-send-email {
+  font-family: rainyhearts; 
+  font-size: 25px; 
+  color: #f21; 
+  font-weight: normal !important;
+  text-transform: uppercase;
+}
+
+.text-send-email {
+  font-family: rainyhearts; 
+  font-size: 18px; 
+  color: #000; 
+  font-weight: normal;
+}
+
+.swal2-input {
+  font-family: rainyhearts;
+  font-size: 18px;
+  padding-block: 5%;
+  height: 10px !important;
+  padding: 20px 5px 20px 5px !important;
+  width: 70%;
+  border: none;
+  border-bottom: solid 2px #000;
+  box-shadow: none;
+  transition: ease 0.3s;
+  color: #000;
+}
+
+.swal2-input:focus {
+  box-shadow: none;
+  border: none;
+  border-bottom: solid 2px #f21;
+}
+
+.send-email-confirm-btn, .send-email-cancel-btn{
+  width: 100px;
+  background: #000 !important;
+  box-shadow: none !important;
+  font-family: arcadeclassic;
+  font-size: 15px !important;
+  padding-block: 7px;
+  transition: ease .2s;
+}
+
+.send-email-confirm-btn:hover, .send-email-cancel-btn:hover {
+  background: #f21 !important;
+}
+
+.message-validate-send-email {
+  font-family: rainyhearts;
+  background: none;
+}
+
+.custom-popup-msg-err-email {
+  background-color: #fef !important;
+  border-radius: 10px;
+  padding-block: 8px 15px !important;
+  /* display: flex !important; */
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.custom-title-msg-err-email {
+  font-family: rainyhearts !important; 
+  font-size: 20px; 
+  color: #000; 
+  font-weight: normal !important;
+}
+
+.custom-button-error-pass {
+  width: 80px;
+  background: #000 !important;
+  box-shadow: none !important;
+  font-family: arcadeclassic;
+  font-size: 18px !important;
+  padding-block: 7px;
+  transition: ease .2s ;
+}
+
+.custom-button-error-pass:hover {
+  background: #f21 !important;
+  box-shadow: 0 0 5px #f21, 0 0 25px #f21, 0 0 50px #f21 !important;
+}
+
+@media screen and (max-width: 599px), (max-height: 500px) {
+  .box-image-form, .image-form {
+    opacity: 0;
+    width: 0;
+  }
+
+  .formulario-box {
+    width: 100%;
+    margin-top: 20%;
+  }
+
+  .footer {
+    margin-top: 10%;
+  }
 }

@@ -8,8 +8,7 @@ if (isset($_SESSION['logged_user'])) {
         window.location.href='http://localhost//Havoc-City--Site----TCC/adm_page.php'
     </script>";
 } else if (!isset($_SESSION['logged_adm'])) {
-}
-else {
+} else {
     header("Location: http://localhost//Havoc-City--Site----TCC/adm_page.php");
 }
 
@@ -53,13 +52,13 @@ else {
                     <label for="email"> Email </label>
                 </div>
                 <div class="user-box">
-                    <input type="password" name="senha" id="senha" required autocomplete="off" />
-                    <label for="senha"> Senha </label>
+                    <input type="password" name="password" id="password" required autocomplete="off" value="<?php echo isset($_SESSION['form_data']['password']) ? $_SESSION['form_data']['password'] : ''; ?>" />
+                    <label for="password"> Senha </label>
                     <span>
-                        <input type="checkbox" name="mostrar-senha" onclick="showPassword()" id="mostrar-senha" class="caixa-mostrar-senha" />
+                        <img src="Imagens/hide_pass.png" alt="hide-password" class="image-show-hide-pass" onclick="showPassword()" id="show-password" />
                     </span>
                 </div>
-                <button type="submit">
+                <button type="submit" class="button-submit">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -74,11 +73,31 @@ else {
     </div>
     <div class="footer">
         <div class="info-footer">
-            ™ & ©2023 Havoc City. Todos os direitos reservados. Havoc City, Emanuel Rabello, Gustavo Azevedo, <br>Pedro
-            Ogata, Filipe Grande sao os desenvolvedores
+        ™ & ©2024 Havoc City. Todos os direitos reservados. Havoc City, Emanuel Rabello
         </div>
     </div>
     <script src="js/mostrarSenha.js"></script>
+    <script src="js/sweetAlert.js"></script>
+    <?php 
+    // caso faça algo errado
+    if (isset($_SESSION['failed'])) {
+        $img_path = "Imagens/x_alert.png";
+        $class_html = "image-fail-popup";
+        echo '<script>
+            Swal.fire({
+                position: "top-end",
+                html: "<img src='. $img_path .' class='. $class_html .' />",
+                title: "O email e/ou senha digitados estão incorretos",
+                showConfirmButton: false,
+                timer: 3500,
+                customClass: {
+                    title: "custom-title-forms",
+                    popup: "custom-popup-forms"         
+                }
+            });    
+        </script>';
+        unset($_SESSION['failed']);
+    }
+    ?>
 </body>
-
 </html>

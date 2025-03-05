@@ -36,6 +36,8 @@ $i = 0;
                     </div>
                 </li>
                 <?php
+                // WAMPSERVER
+                /*
                 while ($i < $end_rows) {
                     echo '
                     <li>
@@ -45,6 +47,24 @@ $i = 0;
                             <div class="users-points-time">' . $time[$i] . '</div>
                             <div class="box-image-delete-users"> 
                                 <button id="delete-button" onclick="showMessageDelete(' . $id_jogo[$i] . ')" class="link-delete-adm">
+                                    <img src="Imagens/lixeira.png" class="image-trash" alt="" /> 
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+                    ';
+                    $i += 1;
+                }*/
+                // POSTGRESQL
+                while ($i < $end_rows) {
+                    echo '
+                    <li>
+                        <div class="container-users">
+                            <div class="users-nickname">' . $nickname[$i] . '</div>
+                            <div class="users-points-time">' . $game_points[$i] . '</div>
+                            <div class="users-points-time">' . $game_time[$i] . '</div>
+                            <div class="box-image-delete-users"> 
+                                <button id="delete-button" onclick="showMessageDelete(' . $id_game[$i] . ')" class="link-delete-adm">
                                     <img src="Imagens/lixeira.png" class="image-trash" alt="" /> 
                                 </button>
                             </div>
@@ -67,8 +87,7 @@ $i = 0;
 
     <div class="footer">
         <div class="info-footer">
-            ™ & ©2023 Havoc City. Todos os direitos reservados. Havoc City, Emanuel Rabello, Gustavo Azevedo, <br>Pedro
-            Ogata, Filipe Grande sao os desenvolvedores
+        ™ & ©2024 Havoc City. Todos os direitos reservados. Havoc City, Emanuel Rabello
         </div>
     </div>
     <script>
@@ -76,9 +95,14 @@ $i = 0;
             const result = confirm('Deseja excluir os dados salvos do usuário?');
 
             if (result) {
-                window.location.href = 'http://localhost//Havoc-City--Site----TCC/php/delete_adm.php?id=' + id;
+                // WAMPSERVE
+                // window.location.href = 'http://localhost//Havoc-City--Site----TCC/php/delete_adm.php?id=' + id;
+                // POSTGRESQL
+                window.location.href = 'http://localhost:3000/php/delete_adm.php?id=' + id;
+
             }
         }
     </script>
 </body>
+
 </html>

@@ -1,3 +1,5 @@
+@import url(pages-php.css);
+
 body {
   background: #000;
 }
@@ -9,6 +11,10 @@ body {
 #menu-h ul li a {
   color: #fef;
 } 
+
+.message-download-for-cell {
+  display: none;
+}
 
 .button-download {
   width: 50%;
@@ -40,6 +46,44 @@ body {
   align-items: center;
   margin-top: 10%;
   font-size: 50px;
+}
+
+.custom-title-class {
+  font-family: rainyhearts; 
+  font-size: 30px; 
+  color: #000; 
+}
+
+.custom-content-class {
+  font-family: rainyhearts !important; 
+  font-size: 18px; 
+  color: #000; 
+}
+
+.custom-confirm-button-class {
+  background-color: #f21 !important; 
+  color: #fef !important; 
+  font-family: arcadeclassic; 
+  padding-block: 10px;
+  font-size: 20px !important;
+  width: 100px;
+  box-shadow: none !important;
+  transition: .2s ease;
+}
+
+.custom-confirm-button-class:hover {
+  background-color: #000 !important; 
+  text-shadow: 0 0 5px #fef, 0 0 25px #fef, 0 0 50px #fef, 0 0 100px #fef !important;
+}
+
+.custom-popup-class {
+  background-color: #fef !important;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.image-alert {
+  margin: 5%;
 }
 
 .font-download {
@@ -74,4 +118,10 @@ body {
 
 .link-terms:hover {
   color: #fef;
+}
+
+@media (max-width: 599px), (max-height: 599px), (max-aspect-ratio: 1/1) {
+  .conteiner-download  {
+    display: none;
+  }
 }

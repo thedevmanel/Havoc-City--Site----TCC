@@ -1,13 +1,14 @@
 <?php
 
-$hostname = 'localhost';
-$username = 'root';
-$password = '';
-$database = 'estatistica_jogador';
+include "controller.php";
 
-$conn = mysqli_connect($hostname, $username, $password, $database);
 
-if (!$conn) {
-    die("Erro... " . mysqli_connect_error($conn));
-} else {
+try {
+    $conn = new Database(); // criando uma instância da classe
+    // $conn->connection($hostname, $database, $username, $password); // criando a conexao de acordo com a função
+
+} catch (PDOException $e) {
+    echo "Erro ao tentar conectar com o banco de dados -> " . die($e->getMessage());
 }
+
+?>
