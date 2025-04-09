@@ -21,7 +21,7 @@ include "php/point_records.php";
 
 
 // POSTGRESQL
-$url = "http://localhost:3000/usuario.php" . $_SESSION['logged_user'];
+$url = "http://localhost:3000/usuario.php?id=" . $_SESSION['logged_user'];
 
 for ($i = 0; $i < 5; $i++) {
     if (isset($name_points_position[$i]) || isset($times_points_position[$i]) || isset($pontuations_points_position[$i])) {
@@ -57,6 +57,19 @@ for ($i = 0; $i < 5; $i++) {
 </head>
 
 <body>
+    <!-- menu cellphone -->
+    <img src="Imagens/menu_cell_phone.png" alt="Menu" id="menu-cell" onclick="toggleMenu()" />
+    <nav id="side-menu">
+        <button id="close-menu" onclick="toggleMenu()">X</button>
+        <ul>
+            <li><a href="index.php">Home </a></li>
+
+            <li><a href="Download.php">Download</a></li>
+
+            <li><a href="<?php echo $url; ?>">perfil</a></li>
+            </ul>
+    </nav>
+    <!-- menu computer -->
     <nav id="menu-h">
         <div class="logo-jogo-header">
             <img src="https://fontmeme.com/permalink/231030/8bed3f01dae90fa6adbb3602541bd9f2.png" class="logo-header" />
@@ -250,6 +263,8 @@ for ($i = 0; $i < 5; $i++) {
     }
     unset($_SESSION['pass_error']);
     ?>
+    <script src="js/scripts.js"></script>
+
 </body>
 
 </html>

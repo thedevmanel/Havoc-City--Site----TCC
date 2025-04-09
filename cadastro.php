@@ -31,6 +31,17 @@ if (isset($_SESSION['logged_adm'])) {
 </head>
 
 <body>
+    <img src="Imagens/menu_cell_phone.png" alt="Menu" id="menu-cell" onclick="toggleMenu()" />
+    <nav id="side-menu">
+        <button id="close-menu" onclick="toggleMenu()">X</button>
+        <ul>
+            <li><a href="index.php">Home </a></li>
+
+            <li><a href="Download.php">Download</a></li>
+
+            <li><a href="entrar.php">iniciar sessao</a></li>
+        </ul>
+    </nav>
     <nav id="menu-h-register">
         <a href="adm_login.php">
             <div class="logo-jogo-header">
@@ -93,7 +104,7 @@ if (isset($_SESSION['logged_adm'])) {
     </div>
     <div class="footer">
         <div class="info-footer">
-        ™ & ©2024 Havoc City. Todos os direitos reservados. Havoc City, Emanuel Rabello
+            ™ & ©2024 Havoc City. Todos os direitos reservados. Havoc City, Emanuel Rabello
         </div>
         <!-- <div class="icons-footer">
         <span class="box-icones-footer">
@@ -137,24 +148,25 @@ if (isset($_SESSION['logged_adm'])) {
     }
 
     if (isset($_SESSION['no_logged'])) {
-        ?> 
+    ?>
         <script>
-                Swal.fire({
-                    position: 'top-end',
-                    html: '<img src="Imagens/alert-message.png" class="image-fail-popup" />',
-                    title: 'Crie uma conta para poder realizar o donwload do jogo',
-                    showConfirmButton: false,
-                    timer: 3500,
-                    customClass: {
-                        title: 'custom-title-forms',
-                        popup: 'custom-popup-forms'
-                    }
-                });
+            Swal.fire({
+                position: 'top-end',
+                html: '<img src="Imagens/alert-message.png" class="image-fail-popup" />',
+                title: 'Crie uma conta para poder realizar o donwload do jogo',
+                showConfirmButton: false,
+                timer: 3500,
+                customClass: {
+                    title: 'custom-title-forms',
+                    popup: 'custom-popup-forms'
+                }
+            });
         </script>
-        <?php
-    unset($_SESSION['no_logged']);
+    <?php
+        unset($_SESSION['no_logged']);
     }
     ?>
+    <script src="js/scripts.js"></script>
 </body>
 
 </html>

@@ -14,7 +14,7 @@ function messageAlert() {
   });
 }
 */
-if ((window.innerWidth < 600) || (window.innerHeight < 600)) {
-    alert("A página ainda não está finalizada :(");
-    window.location.href="http://localhost:3000/index.php";
+if (window.innerWidth < window.innerHeight) {
+    // alert("A página ainda não está finalizada :(");
+    // window.location.href="http://localhost:3000/index.php";
 }

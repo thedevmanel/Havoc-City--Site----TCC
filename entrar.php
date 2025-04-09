@@ -35,8 +35,25 @@ if (isset($_SESSION['key_pass'])) {
     <link rel="shortcut icon" href="" type="image x/icon" />
     <link rel="shortcut icon" href="Imagens/logo.png" type="image/x-icon" />
 </head>
-
+<style>
+    @media (orientation: portrait) {
+        .footer {
+            top: 85vh;
+        }
+    }
+</style>
 <body>
+    <img src="Imagens/menu_cell_phone.png" alt="Menu" id="menu-cell" onclick="toggleMenu()" />
+    <nav id="side-menu">
+        <button id="close-menu" onclick="toggleMenu()">X</button>
+        <ul>
+            <li><a href="index.php">Home </a></li>
+
+            <li><a href="Download.php">Download</a></li>
+
+            <li><a href="entrar.php">iniciar sessao</a></li>
+        </ul>
+    </nav>
     <nav id="menu-h">
         <div class="logo-jogo-header">
             <img src="https://fontmeme.com/permalink/231027/599d6f4224ce722a5f04605e3e9d1db4.png" class="logo-header" />
@@ -83,24 +100,24 @@ if (isset($_SESSION['key_pass'])) {
                 <br />
                 <br />
 
-                
+
             </form>
             <div class="forget-pass-box"> <button class="link-forms" id="forgot-pass"> Esqueci minha senha </button> </div>
 
             <form id="form-input-forgot-pass" action="php/forgot_pass.php" method="POST">
                 <input type="hidden" name="input-for-forgot-pass" id="input-for-forgot-pass" />
-                
+
             </form>
         </div>
     </div>
     <div class="footer">
         <div class="info-footer">
-        ™ & ©2024 Havoc City. Todos os direitos reservados. Havoc City, Emanuel Rabello
+            ™ & ©2024 Havoc City. Todos os direitos reservados. Havoc City, Emanuel Rabello
         </div>
     </div>
     <script src="js/mostrarSenha.js"></script>
     <script src="js/sweetAlert.js"></script>
-    <?php 
+    <?php
     // caso email e/ou senha estejm errados
     if (isset($_SESSION['failed'])) {
         $img_path = "Imagens/x_alert.png";
@@ -108,7 +125,7 @@ if (isset($_SESSION['key_pass'])) {
         echo '<script>
             Swal.fire({
                 position: "top-end",
-                html: "<img src='. $img_path .' class='. $class_html .' />",
+                html: "<img src=' . $img_path . ' class=' . $class_html . ' />",
                 title: "O email e/ou senha digitados estão incorretos",
                 showConfirmButton: false,
                 timer: 3500,
@@ -130,7 +147,7 @@ if (isset($_SESSION['key_pass'])) {
             echo '<script>
                 Swal.fire({
                     position: "top-end",
-                    html: "<img src='. $img_path .' class='. $class_html .' />",
+                    html: "<img src=' . $img_path . ' class=' . $class_html . ' />",
                     title: "Enviamos um link para sua caixa de email, assim, você será redirecionado para escrever uma nova senha",
                     showConfirmButton: false,
                     timer: 7000,
@@ -140,7 +157,7 @@ if (isset($_SESSION['key_pass'])) {
                     }
                 });    
             </script>';
-        // email incorreto
+            // email incorreto
         } else {
             echo '
             <script>
@@ -158,7 +175,6 @@ if (isset($_SESSION['key_pass'])) {
             ';
         }
         unset($_SESSION['confirm_email']);
-
     }
 
     // token para recuperação de senha inválido
@@ -169,7 +185,7 @@ if (isset($_SESSION['key_pass'])) {
             echo '<script>
                 Swal.fire({
                     position: "top-end",
-                    html: "<img src='. $img_path .' class='. $class_html .' />",
+                    html: "<img src=' . $img_path . ' class=' . $class_html . ' />",
                     title: "Sua senha foi cadastrada com sucesso, e agora você poderá realizar o login com sua nova senha !!",
                     showConfirmButton: false,
                     timer: 7000,
@@ -185,7 +201,7 @@ if (isset($_SESSION['key_pass'])) {
             echo '<script>
                 Swal.fire({
                     position: "top-end",
-                    html: "<img src='. $img_path .' class='. $class_html .' />",
+                    html: "<img src=' . $img_path . ' class=' . $class_html . ' />",
                     title: "O token para a recuperação de senha está inválida ou inspirada...",
                     showConfirmButton: false,
                     timer: 3500,
@@ -195,12 +211,13 @@ if (isset($_SESSION['key_pass'])) {
                         }
                 });    
                 </script>';
-            } 
+        }
         unset($_SESSION['update_password']);
-    } 
-    
+    }
+
     ?>
     <script src="js/scriptFormularios.js"></script>
+    <script src="js/scripts.js"></script>
 </body>
 
 </html>

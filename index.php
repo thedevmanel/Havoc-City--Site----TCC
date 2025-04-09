@@ -38,8 +38,19 @@ $url = $login_user_status ? "http://localhost:3000/usuario.php?id=" . urlencode(
         </div>
     </div>
 
-    <!-- <div class="header"> -->
-    <img src="Imagens/linha.png" alt="" id="menu-cell" onclick="appearMenuCell()" /> 
+    <!-- menu cellphone -->
+    <img src="Imagens/menu_cell_phone.png" alt="Menu" id="menu-cell" onclick="toggleMenu()" />
+    <nav id="side-menu">
+        <button id="close-menu" onclick="toggleMenu()">X</button>
+        <ul>
+            <li><a href="index.php">Home </a></li>
+
+            <li><a href="Download.php">Download</a></li>
+
+            <?php $web->loginStatus($login_user_status, $login_adm_status, $url); ?>
+        </ul>
+    </nav>
+    <!-- menu computer -->
     <nav id="menu-h">
         <div class="logo-jogo-header">
             <img src="https://fontmeme.com/permalink/231027/599d6f4224ce722a5f04605e3e9d1db4.png" class="logo-header" />
@@ -52,10 +63,10 @@ $url = $login_user_status ? "http://localhost:3000/usuario.php?id=" . urlencode(
                 <li><a href="Download.php">Download</a></li>
 
                 <?php $web->loginStatus($login_user_status, $login_adm_status, $url); ?>
-        </ul>
+            </ul>
     </nav>
 
-    <!-- primeira box de informações  -->
+    <!--   -->
     <div class="box-conteudo-1" data-title>
         <h1 class="titulo-conteudo-homepage"> Como baixar </h1>
     </div>
@@ -108,7 +119,7 @@ $url = $login_user_status ? "http://localhost:3000/usuario.php?id=" . urlencode(
     </div>
     <div class="footer">
         <div class="info-footer">
-        ™ & ©2024 Havoc City. Todos os direitos reservados. Havoc City, Emanuel Rabello
+            ™ & ©2024 Havoc City. Todos os direitos reservados. Havoc City, Emanuel Rabello
         </div>
         <!-- <div class="icons-footer">
             <span class="box-icones-footer">
@@ -122,6 +133,7 @@ $url = $login_user_status ? "http://localhost:3000/usuario.php?id=" . urlencode(
         </div> -->
     </div>
     <script src="js/scriptHome.js"></script>
+    <script src="js/scripts.js"></script>
 </body>
 
 </html>

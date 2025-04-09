@@ -33,17 +33,34 @@ $is_logged = isset($_SESSION['logged_user']) || isset($_SESSION['logged_adm']);
             aaaaaaa
         </div>
 
-        <nav id="menu-h">
-            <div class="logo-jogo-header">
-                <img src="https://fontmeme.com/permalink/231027/599d6f4224ce722a5f04605e3e9d1db4.png" class="logo-header" />
-            </div>
+
+        <!-- menu cellphone -->
+    <img src="Imagens/menu_cell_phone.png" alt="Menu" id="menu-cell" onclick="toggleMenu()" />
+    <nav id="side-menu">
+        <button id="close-menu" onclick="toggleMenu()">X</button>
+        <ul>
+            <li><a href="index.php">Home </a></li>
+
+            <li><a href="Download.php">Download</a></li>
+
+            <?php $web->loginStatus($login_user_status, $login_adm_status, $url); ?>
+        </ul>
+    </nav>
+    <!-- menu computer -->
+    <nav id="menu-h">
+        <div class="logo-jogo-header">
+            <img src="https://fontmeme.com/permalink/231027/599d6f4224ce722a5f04605e3e9d1db4.png" class="logo-header" />
+        </div>
+
+        <ul>
             <ul>
                 <li><a href="index.php">Home </a></li>
 
                 <li><a href="Download.php">Download</a></li>
 
                 <?php $web->loginStatus($login_user_status, $login_adm_status, $url); ?>
-        </nav>
+            </ul>
+    </nav>
 
         <span class="title-download"> Baixe o nosso jogo </span>
 
@@ -51,7 +68,7 @@ $is_logged = isset($_SESSION['logged_user']) || isset($_SESSION['logged_adm']);
 
         </div>
 
-        <?php echo $is_logged ? '<a href="Jogo/Havoc City.exe">' : ''; ?>
+        <?php echo $is_logged ? '<a href="Jogo/Havoc_City.zip">' : ''; ?>
         <button id="button-download" class="button-download" <?php echo $is_logged ? '' : 'onclick="messageAlert()"'; ?>>
             BAIXAR JOGO
         </button>
@@ -68,6 +85,7 @@ $is_logged = isset($_SESSION['logged_user']) || isset($_SESSION['logged_adm']);
 
     <script src="js/sweetAlert.js"></script>
     <script src="js/scriptDownload.js"></script>
+    <script src="js/scripts.js"></script>
     <script>
         function messageAlert() {
             window.location.href = 'http://localhost:3000/cadastro.php';

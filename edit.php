@@ -91,8 +91,7 @@ $url = "http://localhost:3000/usuario.php?id=" . urlencode($id_user);
   </div>
   <div class="footer">
     <div class="info-footer">
-      ™ & ©2023 Havoc City. Todos os direitos reservados. Havoc City, Emanuel Rabello, Gustavo Azevedo, <br>Pedro Ogata,
-      Filipe Grande sao os desenvolvedores
+      ™ & ©2024 Havoc City. Todos os direitos reservados. Havoc City, Emanuel Rabello
     </div>
     <script src="js/mostrarSenha.js"></script>
 

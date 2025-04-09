@@ -1,0 +1,1 @@
+W (Pular), A e D (Direita e Esquerda), Ataques: K e Espaço (Ataque especial com 20 de mana obtido), Menus: W, A, S, D (Mover), Enter (Selecionar opções), ESC(Cancelar).

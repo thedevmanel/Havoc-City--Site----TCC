@@ -42,22 +42,12 @@ function scrollAnimation() {
       if (windowTop > e.offsetTop) {
         // setTimeout(()=> {
           e.classList.add('iniciated-animation')
-
         // }, 300)
       }
     })
   })
-
-  
 }
 
 window.addEventListener('scroll', () => {
   scrollAnimation()
 })
-
-// if (window.innerWidth <= 600) {
-  function showMenu() {
-    alert('deu certo');
-    
-  }
-

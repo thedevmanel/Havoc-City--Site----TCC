@@ -24,10 +24,10 @@ body {
   margin: 10% 25% 3% 25%;
   border: none;
   border-radius: 5px;
-  padding-block: 30px;
+  padding-block: 4vh;
   transition: 0.2s ease;
   cursor: pointer;
-  font-size: 30px;
+  font-size: 3vw;
   font-family: arcadeclassic;
 }
 
@@ -45,7 +45,7 @@ body {
   justify-content: center;
   align-items: center;
   margin-top: 10%;
-  font-size: 50px;
+  font-size: 5vw;
 }
 
 .custom-title-class {
@@ -120,8 +120,21 @@ body {
   color: #fef;
 }
 
-@media (max-width: 599px), (max-height: 599px), (max-aspect-ratio: 1/1) {
-  .conteiner-download  {
-    display: none;
+.footer {
+  position: absolute;
+  top: 92vh;
+}
+
+@media (orientation: portrait) {
+  .title-download {
+    margin-top: 15vh;
+    font-size: 10vw;
+  }
+
+  .button-download {
+    padding-block: 3vh;
+    font-size: 3vh;
+    top: 40vh;
+    position: absolute;
   }
 }

@@ -1,6 +1,6 @@
 @import url(pages-php.css);
 
-#menu-h{
+#menu-h {
   background: transparent;
 }
 
@@ -23,15 +23,15 @@
 }
 
 #menu-h-register ul li a {
-  width: 120px;
-  height: 35px;
+  width: 12vw;
+  height: 6vh;
   display: grid;
   place-items: center;
   transition: 0.2s;
   color: #fef;
   text-decoration: none;
   font-family: arcadeclassic;
-  font-size: 15px;
+  font-size: 1.4vw;
 }
 
 #menu-h-register ul li a:hover {
@@ -60,7 +60,7 @@
 
 .image-form {
   width: 100%;
-  object-fit: cover; 
+  object-fit: cover;
 }
 
 .content-login {
@@ -83,17 +83,18 @@
   text-align: center;
   text-transform: uppercase;
   font-family: arcadeclassic;
-  font-size: 50px;
+  font-size: 7vh;
 }
 
 .formulario-box .user-box {
   position: relative;
 }
 
-.formulario-box .user-box input[type="text"], input[type="password"] {
+.formulario-box .user-box input[type="text"],
+input[type="password"] {
   width: 100%;
   padding: 10px 0;
-  font-size: 20px;
+  font-size: 3vh;
   color: #000;
   margin-bottom: 10%;
   border: none;
@@ -107,8 +108,8 @@
   position: absolute;
   top: 0;
   left: 0;
-  padding: 10px 0;
-  font-size: 16px;
+  padding: 1vh 0;
+  font-size: 3vh;
   color: #000;
   pointer-events: none;
   transition: 0.2s ease;
@@ -118,13 +119,13 @@
 #show-password {
   all: unset;
   position: absolute;
-  width: 20px;
-  height: 20px;
+  width: 4vh;
+  height: 4vh;
   display: inline-block;
   border-radius: 2px;
   cursor: pointer;
   transition: 0.2s ease;
-  top: 20%;
+  top: 10%;
   right: 0;
 }
 
@@ -170,15 +171,16 @@
 } */
 
 .formulario-box .user-box input[type="text"]:focus + label,
-.formulario-box .user-box input[type="text"]:valid + label, 
+.formulario-box .user-box input[type="text"]:valid + label,
 input[type="password"]:focus + label,
 input[type="password"]:valid + label {
-  top: -20px;
+  top: -4vh;
   left: 0;
   color: #f21;
 }
 
-.formulario-box .user-box input[type="text"]:focus, input[type="password"]:focus {
+.formulario-box .user-box input[type="text"]:focus,
+input[type="password"]:focus {
   border-bottom: 1px solid #f21;
   /* box-shadow:0 0 0 transparent, 0 0 0 transparent, 0 2px 15px #f21, 0 0 0 transparent; */
 }
@@ -186,7 +188,7 @@ input[type="password"]:valid + label {
 .texto-link-para-cadastro {
   color: #000;
   font-family: rainyhearts;
-  font-size: 15px;
+  font-size: 3vh;
   font-weight: bold;
 }
 
@@ -198,7 +200,6 @@ input[type="password"]:valid + label {
   font-family: arcadeclassic;
   font-weight: normal;
   border: none;
-  
 }
 
 .link-forms:visited {
@@ -215,12 +216,12 @@ input[type="password"]:valid + label {
 .forget-pass-box {
   display: flex;
   justify-content: center;
-  font-size: 15px;
+  font-size: 4vh;
   margin: 10px;
 }
 
 button.link-forms {
-  font-size: 15px;
+  font-size: 3vh;
   border: none;
   cursor: pointer;
 }
@@ -229,9 +230,9 @@ button.link-forms {
   position: relative;
   display: inline-block;
   width: 100%;
-  padding-block: 16px;
+  padding-block: 2vh;
   color: #f21;
-  font-size: 25px;
+  font-size: 3.5vh;
   text-decoration: none;
   text-transform: uppercase;
   overflow: hidden;
@@ -358,16 +359,17 @@ button.link-forms {
 .custom-popup-forms {
   background-color: #fef !important;
   border-radius: 10px;
-  padding-block: 8px 15px !important;
+  padding-block: 1vh 2vh !important;
   display: flex !important;
   align-items: center;
   justify-content: space-evenly;
+  width: 50vw;
 }
 
 .custom-title-forms {
-  font-family: rainyhearts; 
-  font-size: 15px; 
-  color: #000; 
+  font-family: rainyhearts;
+  font-size: 3vh;
+  color: #000;
   font-weight: normal !important;
 }
 
@@ -376,26 +378,31 @@ button.link-forms {
 }
 
 .title-send-email {
-  font-family: rainyhearts; 
-  font-size: 25px; 
-  color: #f21; 
+  font-family: rainyhearts;
+  font-size: 4vh;
+  color: #f21;
   font-weight: normal !important;
   text-transform: uppercase;
 }
 
+.text-desative-account {
+  font-family: rainyhearts;
+  font-size: 3vh;
+}
+
 .text-send-email {
-  font-family: rainyhearts; 
-  font-size: 18px; 
-  color: #000; 
+  font-family: rainyhearts;
+  font-size: 3vh;
+  color: #000;
   font-weight: normal;
 }
 
 .swal2-input {
   font-family: rainyhearts;
-  font-size: 18px;
+  font-size: 3vh;
   padding-block: 5%;
   height: 10px !important;
-  padding: 20px 5px 20px 5px !important;
+  padding: 3vh 1vw 3vh 1vw !important;
   width: 70%;
   border: none;
   border-bottom: solid 2px #000;
@@ -410,23 +417,30 @@ button.link-forms {
   border-bottom: solid 2px #f21;
 }
 
-.send-email-confirm-btn, .send-email-cancel-btn{
-  width: 100px;
+.send-email-confirm-btn,
+.send-email-cancel-btn {
+  width: 18vh;
   background: #000 !important;
   box-shadow: none !important;
   font-family: arcadeclassic;
-  font-size: 15px !important;
-  padding-block: 7px;
+  font-size: 3vh !important;
+  padding-block: 1vh;
   transition: ease .2s;
 }
 
-.send-email-confirm-btn:hover, .send-email-cancel-btn:hover {
+.send-email-confirm-btn:hover,
+.send-email-cancel-btn:hover {
   background: #f21 !important;
 }
 
 .message-validate-send-email {
   font-family: rainyhearts;
   background: none;
+  font-size: 3vh !important;
+}
+
+div:where(.swal2-container).swal2-center > .swal2-popup {
+  width: 40vw;
 }
 
 .custom-popup-msg-err-email {
@@ -439,20 +453,20 @@ button.link-forms {
 }
 
 .custom-title-msg-err-email {
-  font-family: rainyhearts !important; 
-  font-size: 20px; 
-  color: #000; 
+  font-family: rainyhearts !important;
+  font-size: 5vh;
+  color: #000;
   font-weight: normal !important;
 }
 
 .custom-button-error-pass {
-  width: 80px;
+  width: 10vw;
   background: #000 !important;
   box-shadow: none !important;
   font-family: arcadeclassic;
-  font-size: 18px !important;
+  font-size: 3vh !important;
   padding-block: 7px;
-  transition: ease .2s ;
+  transition: ease .2s;
 }
 
 .custom-button-error-pass:hover {
@@ -460,18 +474,66 @@ button.link-forms {
   box-shadow: 0 0 5px #f21, 0 0 25px #f21, 0 0 50px #f21 !important;
 }
 
-@media screen and (max-width: 599px), (max-height: 500px) {
-  .box-image-form, .image-form {
+@media (orientation: portrait), (max-height: 500px) {
+  #menu-h-register {
+    display: none;
+  }
+  .box-image-form,
+  .image-form {
     opacity: 0;
     width: 0;
   }
 
+  .titulo-formulario {
+    margin: 0 0 5vh;
+  }
+
   .formulario-box {
     width: 100%;
-    margin-top: 20%;
+    margin-top: 7vh;
+  }
+
+  .texto-link-para-cadastro {
+    font-size: 3vh;
+    text-align: center;
+  }
+
+  button.link-forms {
+    font-size: 3vh;
+  }
+
+  .formulario-box form .button-submit {
+    font-size: 4vh;
+    padding-block: 3vw;
+  }
+
+  .formulario-box .user-box label {
+    font-size: 3vh;
   }
 
   .footer {
-    margin-top: 10%;
+    position: absolute;
+    /* top: 88vh; */
+    background: transparent;
+  }
+
+  .swal2-input {
+    width: 60%;
+  }
+
+  div:where(.swal2-container).swal2-center > .swal2-popup {
+    width: 80vw;
+  }
+
+  .custom-popup-forms {
+    width: 80vw;
+  }
+
+  .custom-button-error-pass {
+    width: 20vw;
+  }
+
+  .image-fail-popup {
+    display: none;
   }
 }
